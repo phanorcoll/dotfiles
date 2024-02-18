@@ -112,8 +112,7 @@ alias dub=$HOME/codehub/dubsado
 alias dubapi=$HOME/codehub/dubsado/API
 alias air='$(go env GOPATH)/bin/air'
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
-#
-#export GITHUB_TOKEN=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
+
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
