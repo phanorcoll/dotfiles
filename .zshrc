@@ -107,10 +107,10 @@ alias cat=batcat
 alias lg=lazygit
 alias home=$HOME
 alias gopher=$HOME/codehub/personal/gopher
-alias codehub=$HOME/codehub
+alias ch=$HOME/codehub
+alias lab=$HOME/codehub/personal
 alias dub=$HOME/codehub/dubsado
 alias dubapi=$HOME/codehub/dubsado/API
-alias air='$(go env GOPATH)/bin/air'
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
 export GOPATH=$HOME/go
