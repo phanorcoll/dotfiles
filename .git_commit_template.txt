@@ -1,6 +1,8 @@
 # Git Commit Message Template
 
-<type>(<scope>): <subject>
+
+
+#<type>(<scope>): <subject>
 
 # - <scope>: Optional. Describes the module, component, or section of the project affected by the commit.
 
