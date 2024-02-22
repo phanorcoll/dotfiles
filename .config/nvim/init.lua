@@ -174,7 +174,7 @@ require('lazy').setup({
   -- Fuzzy Finder (files, lsp, etc)
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.5',
+    branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       -- Fuzzy Finder Algorithm which requires local dependencies to be built.
@@ -322,12 +322,23 @@ require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'bash', 'css', 'dockerfile', 'go', 'http', 'json', 'jsdoc', 'javascript', 'html', 'lua', 'python',
     'rust', 'svelte', 'tsx',
-    'typescript', 'vimdoc', 'vim', 'yaml', 'markdown', 'markdown_inline', 'gitignore' },
+    'typescript', 'vimdoc', 'vim', 'yaml', 'markdown', 'markdown_inline', 'gitignore', 'templ' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
 
-  highlight = { enable = true },
+  -- modules-- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- modules -- List of parsers to ignore installing (or "all")
+  ignore_install = {},
+
+  modules = {},
+
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
   indent = { enable = true },
   incremental_selection = {
     enable = true,
@@ -449,14 +460,16 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs' } },
+  html = { filetypes = { 'html', 'twig', 'hbs', 'templ' } },
   svelte = {},
   docker_compose_language_service = {},
   dockerls = {},
   cssls = {},
-  tailwindcss = {},
+  tailwindcss = { filetypes = { "templ", "astro", "javascript", "typescript", "react" }, },
   yamlls = {},
   jsonls = {},
+  templ = {},
+  htmx = { filetypes = { 'html', 'templ' } },
 
   lua_ls = {
     Lua = {
