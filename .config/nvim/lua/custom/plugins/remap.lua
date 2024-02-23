@@ -1,5 +1,5 @@
-local function map(mode, lhs, rhs)
-  vim.keymap.set(mode, lhs, rhs, { silent = true })
+local function map(mode, lhs, rhs, help)
+  vim.keymap.set(mode, lhs, rhs, { silent = true, desc = help })
 end
 return {
   -- Resize Windows
@@ -25,5 +25,8 @@ return {
   -- Buffer
   map("n", "<TAB>", "<CMD>bnext<CR>"),
   map("n", "<S-TAB>", "<CMD>bprevious<CR>"),
+
+  -- search hightlight
+  map("n", "<leader>nh", "<CMD>nohlsearch<CR>", "[N]o [h]ightlight"),
 
 }
