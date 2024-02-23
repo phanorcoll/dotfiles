@@ -32,6 +32,7 @@ return {
         dart = true,
         lua = true,
         svelte = true,
+        sh = true,
         ["*"] = false, -- disable for all other filetypes and ignore default `filetypes`
       },
       suggestion = {
