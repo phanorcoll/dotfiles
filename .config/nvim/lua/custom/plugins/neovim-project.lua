@@ -4,8 +4,11 @@ return {
   "coffebar/neovim-project",
   opts = {
     projects = { -- define project roots
-      "~/projects/*",
-      "~/.config/*",
+      "~/codehub/dubsado/*",
+      "~/codehub/personal/*",
+      "~/codehub/personal/gopher/*",
+      "~/codehub/personal/gopher/glab/*",
+      "~/codehub/personal/dotfiles/.config/*",
     },
   },
   init = function()
