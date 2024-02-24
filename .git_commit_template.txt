@@ -32,3 +32,18 @@
 # - ci: Changes to the continuous integration (CI) configuration or scripts.
 # - perf: Performance improvements.
 # - revert: Reverting a previous commit.
+
+#The keywords that can use to automatically close an issue from a commit message are:
+
+# - close
+# - closes
+# - closed
+# - fix
+# - fixes
+# - fixed
+# - resolve
+# - resolves
+# - resolved
+
+# Example:
+# git commit -m "Your commit message here. Resolves #456."
