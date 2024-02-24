@@ -485,7 +485,6 @@ local servers = {
   yamlls = {},
   jsonls = {},
   templ = {},
-  htmx = { filetypes = { 'html', 'templ' } },
 
   lua_ls = {
     Lua = {
