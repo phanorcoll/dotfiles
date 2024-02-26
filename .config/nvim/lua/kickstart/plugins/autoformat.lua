@@ -50,6 +50,10 @@ return {
           return
         end
 
+        if client.name == 'templ' then
+          return
+        end
+
         if client.name == 'gopls' then
           -- Run gofmt + goimport on save
           local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})

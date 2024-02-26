@@ -476,7 +476,7 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs', 'templ' } },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
   svelte = {},
   docker_compose_language_service = {},
   dockerls = {},
