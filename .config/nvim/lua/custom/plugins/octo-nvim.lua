@@ -1,4 +1,7 @@
 -- https://github.com/pwntester/octo.nvim
+-- NOTE: workaround for current bug
+-- https://github.com/pwntester/octo.nvim/issues/466
+vim.g.octo_viewer = "phanorcoll"
 return {
   'pwntester/octo.nvim',
   requires = {
