@@ -5,7 +5,6 @@ config:
   icon-position: "right" # show the icon to the "left" or "right" of the window name (defaults to left)
 
 icons:
-  docker: "🐳"
-  fish: "🐠"
+  docker: ""
   nvim: ""
-  overmind: "👀"
+  make: ""
