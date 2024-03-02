@@ -9,6 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="gnzh"
+ZSH_THEME="nicoulaj"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -113,6 +114,7 @@ alias dub=$HOME/codehub/dubsado
 alias dubapi=$HOME/codehub/dubsado/API
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
+export MYVIMRC=~/.config/nvim/init.vim
 export OPENAI_API_KEY=TODO
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
