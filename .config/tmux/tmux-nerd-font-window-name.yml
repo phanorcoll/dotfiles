@@ -1,6 +1,6 @@
 config:
   fallback-icon: "❓"
-  multi-pane-icon: "🪟"
+  multi-pane-icon: "󰶜"
   show-name: true
   icon-position: "right" # show the icon to the "left" or "right" of the window name (defaults to left)
 
