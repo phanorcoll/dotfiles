@@ -1,7 +1,7 @@
 config:
   fallback-icon: "❓"
   multi-pane-icon: "🪟"
-  show-name: true
+  show-name: false
 
 icons:
   docker: "🐳"
