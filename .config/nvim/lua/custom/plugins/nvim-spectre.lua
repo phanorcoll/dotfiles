@@ -1,4 +1,4 @@
--- https://github.com/nvim-pack/nvim-spectre_new
+-- https://github.com/nvim-pack/nvim-spectre
 vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
   desc = "Toggle Spectre"
 })
@@ -12,5 +12,20 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
   desc = "[s]earch on current file. [p]"
 })
 return {
-  "nvim-pack/nvim-spectre"
+  "nvim-pack/nvim-spectre",
+  config = function()
+    require('spectre').setup({
+      color_devicons    = true,
+      lnum_for_results  = true, -- show line number for search/replace results
+      is_block_ui_break = true,
+      line_sep_start    = '-------------------------------------------------------------------',
+      result_padding    = '   ',
+      line_sep          = '-------------------------------------------------------------------',
+      highlight         = {
+        ui = "String",
+        search = "DiffChange",
+        replace = "DiffDelete"
+      },
+    })
+  end,
 }
