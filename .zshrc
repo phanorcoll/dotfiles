@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias ghd='gh dash'
 alias dot=$HOME/codehub/personal/dotfiles
 alias cat=batcat
 alias lg=lazygit
@@ -112,6 +113,7 @@ alias dub=$HOME/codehub/dubsado
 alias dubapi=$HOME/codehub/dubsado/API
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
+export OPENAI_API_KEY=TODO
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
