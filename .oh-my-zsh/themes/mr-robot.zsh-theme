@@ -55,7 +55,7 @@ function git_prompt_status() {
 }
 
 # Set the prompt
-PROMPT='%F{$PRIMARY_COLOR}󰚩 %f%F{$SECONDARY_COLOR} %f '
+PROMPT='%F{$PRIMARY_COLOR}󰚩  %n%f%F{$SECONDARY_COLOR} %f '
 
 # Customize the right prompt
 RPROMPT='$(git_prompt_status)'
