@@ -1,4 +1,4 @@
-![Create a lively anime scene featuring a Golang-inspired gopher proudly showcasing 'Dotfiles'](https://github.com/phanorcoll/dotfiles/assets/195602/22e1be57-7c04-4be2-a710-ad2fc14c7180)
+![gopher time](https://github.com/phanorcoll/dotfiles/assets/195602/22e1be57-7c04-4be2-a710-ad2fc14c7180)
 # Configuration files
 
 
