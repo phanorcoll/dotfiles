@@ -458,6 +458,7 @@ local servers = {
   yamlls = {},
   jsonls = {},
   templ = {},
+  marksman = {},
 
   lua_ls = {
     Lua = {
