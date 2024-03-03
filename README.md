@@ -1,9 +1,15 @@
 # Configuration files
 
 ## Install
-Clone the repo in any location and inside the root folder run
+Clone the repo in any location and inside the root of the dotfiles folder run:
 
 `stow --target ~/ .`
+
+**note:** Make sure you dont have the same file structure as the dotfiles folder, if you do, backup everything.
+
+Remember, <u>**never delete**</u> something unless you're 100% sure you'll never needed again.
+
+**Stow** will create a symlink for each folder and file in your **$HOME**.
 
 ## Set the Global Configuration for Git
 Set the global Git configuration to use your template file.
