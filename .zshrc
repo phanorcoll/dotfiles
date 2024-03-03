@@ -1,5 +1,16 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+skip_global_compinit=1
+# all Tab widgets
+zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+
+# all history widgets
+zstyle ':autocomplete:*history*:*' insert-unambiguous yes
+
+# ^S
+zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -104,15 +115,11 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias ghd='gh dash'
-alias dot=$HOME/codehub/personal/dotfiles
 alias cat=batcat
 alias lg=lazygit
 alias home=$HOME
-alias gopher=$HOME/codehub/personal/gopher
 alias ch=$HOME/codehub
 alias lab=$HOME/codehub/personal
-alias dub=$HOME/codehub/dubsado
-alias dubapi=$HOME/codehub/dubsado/API
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
 export MYVIMRC=~/.config/nvim/init.vim
@@ -120,7 +127,9 @@ export OPENAI_API_KEY=TODO
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
+export PATH=$PATH:~/.local/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(zoxide init zsh)"
