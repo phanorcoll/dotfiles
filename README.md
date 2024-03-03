@@ -7,7 +7,7 @@ Clone the repo in any location and inside the root of the dotfiles folder run:
 
 **note:** Make sure you dont have the same file structure as the dotfiles folder, if you do, backup everything.
 
-Remember, <u>**never delete**</u> something unless you're 100% sure you'll never needed again.
+Remember, <u>**never delete**</u> something unless you're 100% sure you'll never need it again.
 
 **Stow** will create a symlink for each folder and file in your **$HOME**.
 
