@@ -1,15 +1,15 @@
 -- https://github.com/sindrets/diffview.nvim
-vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", {
-  desc = "Open diff view [g][d]"
+vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewOpen<CR>", {
+  desc = "Open [d]iff [v]iew"
 })
-vim.keymap.set("n", "<leader>gD", "<cmd>DiffviewClose<CR>", {
-  desc = "Close diff view close [g][D]"
+vim.keymap.set("n", "<leader>dc", "<cmd>DiffviewClose<CR>", {
+  desc = "Close [d]iff view [c]"
 })
-vim.keymap.set("n", "<leader>gdr", "<cmd>DiffviewRefresh<CR>", {
-  desc = "Close diff view refresh  [g][d][r]"
+vim.keymap.set("n", "<leader>dvr", "<cmd>DiffviewRefresh<CR>", {
+  desc = "[d]iff [v]iew [r]efresh"
 })
 vim.keymap.set("n", "<leader>gvh", "<cmd>DiffviewFileHistort<CR>", {
-  desc = "Close diff view file history [g][v][h] "
+  desc = "[d]iff [v]iew file [h]istory "
 })
 return {
   "sindrets/diffview.nvim",
