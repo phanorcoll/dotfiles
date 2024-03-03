@@ -1,15 +1,15 @@
 -- https://github.com/nvim-pack/nvim-spectre
 vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
-  desc = "Toggle Spectre"
+  desc = "Toggle [S]pectre"
 })
-vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
-  desc = "[s]earch current [w]ord"
+vim.keymap.set('n', '<leader>Sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+  desc = "[S]earch current [w]ord"
 })
-vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-  desc = "[s]earch current [w]ord"
+vim.keymap.set('v', '<leader>Sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+  desc = "[S]earch current [w]ord"
 })
-vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-  desc = "[s]earch on current file. [p]"
+vim.keymap.set('n', '<leader>Sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+  desc = "[S]earch on current file. [p]"
 })
 return {
   "nvim-pack/nvim-spectre",
