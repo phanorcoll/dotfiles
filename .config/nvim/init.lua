@@ -260,6 +260,14 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- close split
+vim.keymap.set('n', '<leader>cs', '<C-w>o', { desc = 'Close all splits except current' })
+
+-- Open split in new tab
+vim.keymap.set('n', '<leader>te', ':tabe %<CR>', { desc = 'Open split in new tab' })
+-- close tab
+vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { desc = 'Close tab' })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
