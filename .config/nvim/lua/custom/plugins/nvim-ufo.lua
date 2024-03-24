@@ -7,5 +7,4 @@ return {
     'kevinhwang91/promise-async'
   },
   event = "BufRead",
-  require('nvim-ufo').setup()
 }
