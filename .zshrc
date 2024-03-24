@@ -117,9 +117,6 @@ source $ZSH/oh-my-zsh.sh
 alias ghd='gh dash'
 alias cat=batcat
 alias lg=lazygit
-alias home=$HOME
-alias ch=$HOME/codehub
-alias lab=$HOME/codehub/personal
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
 export MYVIMRC=~/.config/nvim/init.vim
