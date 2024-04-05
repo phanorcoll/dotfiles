@@ -115,9 +115,14 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias ghd='gh dash'
-alias cat=batcat
+alias cat=bat
 alias lg=lazygit
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+
+# Dont commit
+alias dot=$HOME/codehub/personal/dotfiles
+alias dub=$HOME/codehub/dubsado
+alias dubapi=$HOME/codehub/dubsado/API
 
 export MYVIMRC=~/.config/nvim/init.vim
 export OPENAI_API_KEY=TODO
@@ -126,6 +131,7 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
 export PATH=$PATH:~/.local/bin
 
+export npm_config_python=$(which python3)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
