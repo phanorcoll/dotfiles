@@ -1,6 +1,7 @@
 -- https://github.com/nvim-tree/nvim-tree.lua
 -- TODO: Improve configuration
 -- TODO: Make bg transparent
+-- :h nvim-tree
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
