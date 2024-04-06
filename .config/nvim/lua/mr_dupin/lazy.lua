@@ -11,7 +11,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("mr_dupin.plugins", {
+require("lazy").setup({ { import = "mr_dupin.plugins" }, { import = "mr_dupin.plugins.lsp"} }, {
   change_detection = {
     notify = false,
   },
