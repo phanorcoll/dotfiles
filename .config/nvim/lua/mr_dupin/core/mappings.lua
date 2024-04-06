@@ -28,7 +28,7 @@ keymap.set('n', '<leader>w', '<CMD>update<CR>', { desc = 'Save file' })
 
 -- Quit
 keymap.set('n', '<leader>q', '<CMD>q<CR>', { desc = 'Close neovim' })
-keymap.set('n', '<leader>b', '<CMD>bd<CR>', { desc = 'Close boffer' })
+keymap.set('n', '<leader>b', '<CMD>bd<CR>', { desc = 'Close buffer' })
 
 -- Buffer
 keymap.set('n', '<TAB>', '<CMD>bnext<CR>')
