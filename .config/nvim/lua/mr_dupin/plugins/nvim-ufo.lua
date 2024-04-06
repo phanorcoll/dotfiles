@@ -1,4 +1,5 @@
 -- https://github.com/kevinhwang91/nvim-ufo
+
 return {
   'kevinhwang91/nvim-ufo',
   enabled = true,
@@ -7,11 +8,6 @@ return {
   },
   event = 'BufRead',
   config = function()
-    local ftMap = {
-      vim = 'indent',
-      python = { 'indent' },
-      git = '',
-    }
     local handler = function(virtText, lnum, endLnum, width, truncate)
       local newVirtText = {}
       local suffix = ('  %d '):format(endLnum - lnum)
@@ -43,9 +39,6 @@ return {
       enable_get_fold_virt_text = true,
       fold_virt_text_handler = handler,
       open_fold_hl_timeout = 150,
-      close_fold_kinds_for_ft = {
-        default = { 'imports', 'comment' },
-      },
       preview = {
         win_config = {
           border = { '', '─', '', '', '', '─', '', '' },
@@ -62,8 +55,7 @@ return {
       provider_selector = function(bufnr, filetype, buftype)
         -- if you prefer treesitter provider rather than lsp,
         -- return ftMap[filetype] or {'treesitter', 'indent'}
-        return ftMap[filetype]
-
+        return { 'treesitter', 'indent' }
         -- refer to ./doc/example.lua for detail
       end,
     }
@@ -78,5 +70,9 @@ return {
         vim.lsp.buf.hover()
       end
     end)
+    vim.o.foldcolumn = '1' -- '0' is not bad
+    vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+    vim.o.foldlevelstart = 99
+    vim.o.foldenable = true
   end,
 }
