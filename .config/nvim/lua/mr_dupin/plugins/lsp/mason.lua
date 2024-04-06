@@ -50,7 +50,11 @@ return {
         -- formatters
         'prettier',
         'stylua',
+        'gofumpt',
+        'goimports',
+        'golines',
         -- linters
+        'golangci-lint',
         'eslint_d',
       },
     }
