@@ -1,5 +1,4 @@
 -- https://github.com/rmagatti/auto-session
--- TODO: Tweak config
 return {
   'rmagatti/auto-session',
   config = function()
