@@ -20,6 +20,7 @@ return {
             prompt_position = 'top',
           },
         },
+        sorting_strategy = 'ascending',
         path_display = { 'smart' },
         prompt_prefix = ' 󰥖  ', -- Set the prompt prefix for all pickers
         mappings = {
