@@ -26,6 +26,7 @@ return {
     }
     local keymap = vim.keymap
     keymap.set({ 'n', 'v' }, '<leader>mp', function()
+    keymap.set({ 'n', 'v' }, '<leader>fp', function()
       conform.format {
         lsp_fallback = true,
         async = false,
