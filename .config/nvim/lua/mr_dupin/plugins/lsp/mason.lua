@@ -56,6 +56,8 @@ return {
         -- linters
         'golangci-lint',
         'eslint_d',
+        'jsonlint',
+        'markdownlint',
       },
     }
   end,
