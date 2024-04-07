@@ -17,6 +17,11 @@ return {
         yaml = { 'prettier' },
         markdown = { 'prettier' },
         lua = { 'stylua' },
+        go = {
+          'gofumpt',
+          'goimports',
+          'golines',
+        },
       },
       format_on_save = {
         lsp_fallback = true,
@@ -25,7 +30,6 @@ return {
       },
     }
     local keymap = vim.keymap
-    keymap.set({ 'n', 'v' }, '<leader>mp', function()
     keymap.set({ 'n', 'v' }, '<leader>fp', function()
       conform.format {
         lsp_fallback = true,
