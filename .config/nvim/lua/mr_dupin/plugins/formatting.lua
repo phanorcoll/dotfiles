@@ -18,7 +18,6 @@ return {
         markdown = { 'prettier' },
         lua = { 'stylua' },
         go = {
-          'gofumpt',
           'goimports',
           'golines',
         },

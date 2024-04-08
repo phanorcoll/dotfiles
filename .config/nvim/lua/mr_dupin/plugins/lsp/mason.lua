@@ -54,7 +54,8 @@ return {
         'goimports',
         'golines',
         -- linters
-        'golangci-lint',
+        -- 'golangci-lint',
+        'revive',
         'eslint_d',
         'jsonlint',
         'markdownlint',
