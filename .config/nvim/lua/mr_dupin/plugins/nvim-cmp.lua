@@ -13,6 +13,12 @@ return {
     'saadparwaiz1/cmp_luasnip', -- for autocompletion
     'rafamadriz/friendly-snippets', -- snippers
     'onsails/lspkind.nvim', -- pictograms
+    {
+      'zbirenbaum/copilot-cmp',
+      config = function()
+        require('copilot_cmp').setup()
+      end,
+    },
   },
   config = function()
     local cmp = require 'cmp'
@@ -39,13 +45,16 @@ return {
         ['<CR>'] = cmp.mapping.confirm { select = false },
       },
       sources = cmp.config.sources {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-        { name = 'buffer' },
-        { name = 'path' },
-        { name = 'vim-dadbod-completion' },
+        { name = 'copilot', group_index = 2 },
+        { name = 'nvim_lsp', group_index = 2 },
+        { name = 'luasnip', group_index = 2 },
+        { name = 'buffer', group_index = 2 },
+        { name = 'path', group_index = 2 },
+        { name = 'vim-dadbod-completion', group_index = 2 },
       },
       formatting = {
+        fields = { cmp.ItemField.Abbr, cmp.ItemField.Kind },
+        expandable_indicator = false,
         format = lspkind.cmp_format {
           maxwidth = 50,
           ellipsis_char = '...',
