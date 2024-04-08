@@ -10,8 +10,9 @@ return {
     local treesitter = require 'nvim-treesitter.configs'
     treesitter.setup {
       modules = {},
-      hightlight = { -- enable syntax highlighting
+      highlight = { -- enable syntax highlighting
         enable = true,
+        additional_vim_regex_highlighting = false,
       },
       indend = {
         enable = true,
