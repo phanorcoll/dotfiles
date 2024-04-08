@@ -23,9 +23,6 @@ keymap.set('n', '<C-Right>', '<C-w>>', {})
 keymap.set('n', '<C-Up>', '<C-w>+', {})
 keymap.set('n', '<C-Down>', '<C-w>-', {})
 
--- Save
-keymap.set('n', '<leader>w', '<CMD>update<CR>', { desc = 'Save file' })
-
 -- Quit
 keymap.set('n', '<leader>q', '<CMD>q<CR>', { desc = 'Close neovim' })
 keymap.set('n', '<leader>b', '<CMD>bd<CR>', { desc = 'Close buffer' })
