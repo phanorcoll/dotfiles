@@ -8,9 +8,6 @@ return {
     'antoinemadec/FixCursorHold.nvim',
     'nvim-treesitter/nvim-treesitter',
     'nvim-neotest/neotest-go',
-    'nvim-neotest/neotest-jest',
-    'thenbe/neotest-playwright',
-    'nvim-neotest/neotest-vim-test',
   },
   config = function()
     local neotest_ns = vim.api.nvim_create_namespace 'neotest'
@@ -41,18 +38,6 @@ return {
             test_table = true,
           },
           args = { '-count=1', '-timeout=60s' },
-        },
-        require 'neotest-vim-test' {
-          ignore_file_types = { 'python', 'vim', 'lua' },
-        },
-        require 'neotest-jest' {
-          jestCommand = require('neotest-jest.jest-util').getJestCommand(vim.fn.expand '%:p:h') .. ' --watch',
-        },
-        require('neotest-playwright').adapter {
-          options = {
-            persist_project_selection = true,
-            enable_dynamic_test_discovery = true,
-          },
         },
       },
     }
