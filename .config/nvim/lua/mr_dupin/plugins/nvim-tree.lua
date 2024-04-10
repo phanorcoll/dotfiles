@@ -35,9 +35,11 @@ return {
           },
         },
       },
-      filters = {},
+      filters = {
+        dotfiles = true,
+      },
       git = {
-        ignore = true,
+        ignore = false,
       },
     }
 
