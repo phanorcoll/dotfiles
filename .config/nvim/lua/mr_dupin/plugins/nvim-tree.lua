@@ -10,6 +10,10 @@ return {
   config = function()
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPugin = 1
+    local api = require 'nvim-tree.api'
+    api.events.subscribe(api.events.Event.FileCreated, function(file)
+      vim.cmd('edit ' .. file.fname)
+    end)
     require('nvim-tree').setup {
       view = {
         width = 40,
