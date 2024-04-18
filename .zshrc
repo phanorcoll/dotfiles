@@ -120,6 +120,11 @@ alias lg=lazygit
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 alias cd=z
 
+######## WARNING: Do not commit this block
+alias dot=$HOME/codehub/personal/dotfiles
+alias dub=$HOME/codehub/dubsado
+alias dubapi=$HOME/codehub/dubsado/API
+######## WARNING: Do not commit this block
 
 export MYVIMRC=~/.config/nvim/init.vim
 export OPENAI_API_KEY=TODO
@@ -136,4 +141,4 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(zoxide init zsh)"
 # Set up fzf key bindings and fuzzy completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
