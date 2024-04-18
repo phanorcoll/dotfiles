@@ -15,6 +15,12 @@ return {
       vim.cmd('edit ' .. file.fname)
     end)
 
+    -- TODO: Improve this function to show more of the name, not only 1 char
+    local function label(path)
+      path = path:gsub(os.getenv 'HOME', '~', 1)
+      return path:gsub('([a-zA-Z])[a-z0-9]+', '%1') .. (path:match '[a-zA-Z]([a-z0-9]*)$' or '')
+    end
+
     require('nvim-tree').setup {
       view = {
         width = 40,
@@ -32,6 +38,8 @@ return {
             },
           },
         },
+        root_folder_label = label,
+        group_empty = label,
       },
       actions = {
         open_file = {
@@ -69,6 +77,7 @@ return {
         attach_mappings = open_nvim_tree,
       }
     end
+
     -- keymapping
     local keymap = vim.keymap
     keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
