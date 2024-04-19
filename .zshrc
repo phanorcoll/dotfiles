@@ -120,11 +120,12 @@ alias lg=lazygit
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 alias cd=z
 
-######## WARNING: Do not commit this block
+######## WARNING: Personal aliases
 alias dot=$HOME/codehub/personal/dotfiles
 alias dub=$HOME/codehub/dubsado
 alias dubapi=$HOME/codehub/dubsado/API
-######## WARNING: Do not commit this block
+alias jq=jqp # https://jqlang.github.io/jq/tutorial/
+######## WARNING: Personal aliases
 
 export MYVIMRC=~/.config/nvim/init.vim
 export OPENAI_API_KEY=TODO
