@@ -113,12 +113,18 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# https://cli.github.com/
 alias ghd='gh dash'
+# https://github.com/sharkdp/bat
 alias cat=bat
+# https://github.com/jesseduffield/lazygit
 alias lg=lazygit
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+
+# https://github.com/ajeetdsouza/zoxide
 alias cd=z
+# https://github.com/eza-community/eza
+alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 ######## WARNING: Personal aliases
 alias dot=$HOME/codehub/personal/dotfiles
@@ -140,6 +146,39 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(zoxide init zsh)"
-# Set up fzf key bindings and fuzzy completion
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# eval "$(fzf --zsh)"
+
+#------------------------- FZF -------------------------
+# https://github.com/junegunn/fzf
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix --exclude .git"
+# fzf theme
+export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type d --hidden --exclude .git . "$1"
+}
+
+source ~/.fzf-git.sh/fzf-git.sh
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=header,grid --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+_fzf_comprun() {
+  local command=$1
+  shift
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \${}'" "$@" ;;
+    ssh)          fzf --preview 'dig {}' "$@" ;;
+    *)            fzf --preview "--preview 'bat -n --color=always --line-range :500 {}" "$@" ;;
+  esac
+  
+}
+
+# export BAT_THEME="gruvbox-dark"
+export BAT_THEME="Dracula"
