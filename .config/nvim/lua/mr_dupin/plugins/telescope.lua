@@ -13,6 +13,14 @@ return {
     local actions = require 'telescope.actions'
 
     -- Settings for with preview option
+    local diagnostic_list = require('telescope.themes').get_dropdown {
+      winblend = 20,
+      width = require('telescope.config.resolve').resolve_width(0.6),
+      prompt = 'oo ',
+      results_height = 15,
+      previewer = true,
+      prompt_prefix = ' 󰥖  ', -- Set the prompt prefix for all pickers
+    }
     local with_preview = {
       layout_strategy = 'horizontal',
       winblend = 20,
@@ -21,7 +29,7 @@ return {
       layout_config = {
         height = 0.6,
         width = 0.9,
-        preview_width = 0.5,
+        preview_width = 0.6,
         horizontal = {
           prompt_position = 'top',
         },
@@ -34,7 +42,7 @@ return {
     local center_list = require('telescope.themes').get_dropdown {
       winblend = 20,
       width = 0.5,
-      prompt = ' ',
+      -- prompt = ' ',
       results_height = 15,
       previewer = false,
       prompt_prefix = ' 󰥖  ', -- Set the prompt prefix for all pickers
@@ -103,7 +111,7 @@ return {
       require('telescope.builtin').help_tags(with_preview)
     end, { desc = 'Search Help' })
     keymap.set('n', '<leader>fd', function()
-      require('telescope.builtin').diagnostics(with_preview)
+      require('telescope.builtin').diagnostics(diagnostic_list)
     end, { desc = 'Search Diagnostics' })
   end,
 }
