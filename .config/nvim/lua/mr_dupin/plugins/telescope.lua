@@ -12,17 +12,36 @@ return {
     local telescope = require 'telescope'
     local actions = require 'telescope.actions'
 
+    -- Settings for with preview option
+    local with_preview = {
+      layout_strategy = 'horizontal',
+      winblend = 20,
+      results_title = false,
+      -- preview_title = false,
+      layout_config = {
+        height = 0.6,
+        width = 0.9,
+        preview_width = 0.5,
+        horizontal = {
+          prompt_position = 'top',
+        },
+      },
+      sorting_strategy = 'ascending',
+      path_display = { 'smart' },
+      prompt_prefix = ' 󰥖  ', -- Set the prompt prefix for all pickers
+    }
+
+    local center_list = require('telescope.themes').get_dropdown {
+      winblend = 20,
+      width = 0.5,
+      prompt = ' ',
+      results_height = 15,
+      previewer = false,
+      prompt_prefix = ' 󰥖  ', -- Set the prompt prefix for all pickers
+    }
+
     telescope.setup {
       defaults = {
-        layout_strategy = 'horizontal',
-        layout_config = {
-          horizontal = {
-            prompt_position = 'top',
-          },
-        },
-        sorting_strategy = 'ascending',
-        path_display = { 'smart' },
-        prompt_prefix = ' 󰥖  ', -- Set the prompt prefix for all pickers
         mappings = {
           i = {
             ['<C-k>'] = actions.move_selection_previous,
@@ -34,6 +53,7 @@ return {
       pickers = {
         find_files = {
           prompt_title = 'Start Searching',
+          find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' },
           -- layout_strategy = 'vertical',
           -- prompt_prefix = 'Find Files!!!: ', -- Override the prompt prefix for the find_files picker
         },
@@ -57,21 +77,33 @@ return {
     telescope.load_extension 'fzf'
 
     local keymap = vim.keymap
-    keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { desc = 'Find files in project' })
-    keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<CR>', { desc = 'Find recent files' })
-    keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<CR>', { desc = 'Find string in project' })
-    keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<CR>', { desc = 'Find string under cursor' })
+    keymap.set('n', '<leader>ff', function()
+      require('telescope.builtin').find_files(with_preview)
+    end, { desc = 'Find files in project' })
+    keymap.set('n', '<leader>fr', function()
+      require('telescope.builtin').oldfiles(with_preview)
+    end, { desc = 'Find recent files' })
+    keymap.set('n', '<leader>fs', function()
+      require('telescope.builtin').live_grep(with_preview)
+    end, { desc = 'Find string in project' })
+    keymap.set('n', '<leader>fc', function()
+      require('telescope.builtin').grep_string(center_list)
+    end, { desc = 'Find string under cursor' })
     keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<CR>', { desc = 'Find TODOs' })
-    keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
+    keymap.set('n', '<leader><space>', function()
+      require('telescope.builtin').buffers(center_list)
+    end, { desc = 'Find existing buffers' })
     keymap.set('n', '<leader>/', function()
-      -- You can pass additional configuration to telescope to change theme, layout, etc.
-      require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        winblend = 10,
-        previewer = false,
-      })
+      require('telescope.builtin').current_buffer_fuzzy_find(center_list)
     end, { desc = '[/] Fuzzily search in current buffer' })
-    keymap.set('n', '<leader>fg', require('telescope.builtin').git_files, { desc = 'Search Git Files' })
-    keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = 'Search Help' })
-    keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = 'Search Diagnostics' })
+    keymap.set('n', '<leader>fg', function()
+      require('telescope.builtin').git_files(center_list)
+    end, { desc = 'Search Git Files' })
+    keymap.set('n', '<leader>fh', function()
+      require('telescope.builtin').help_tags(with_preview)
+    end, { desc = 'Search Help' })
+    keymap.set('n', '<leader>fd', function()
+      require('telescope.builtin').diagnostics(with_preview)
+    end, { desc = 'Search Diagnostics' })
   end,
 }
