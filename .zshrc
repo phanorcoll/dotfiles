@@ -1,7 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-skip_global_compinit=1
 # all Tab widgets
 zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
 
@@ -192,3 +190,8 @@ _fzf_comprun() {
 
 # export BAT_THEME="gruvbox-dark"
 export BAT_THEME="Dracula"
+#https://github.com/marlonrichert/zsh-autocomplete
+skip_global_compinit=1
+source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#https://github.com/zsh-users/zsh-autosuggestions
+source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
