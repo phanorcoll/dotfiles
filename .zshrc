@@ -81,7 +81,7 @@ ZSH_THEME="mr-robot"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf zsh-autosuggestions zsh-syntax-highlighting colorize colored-man-pages fasd tmux)
+plugins=(git asdf zsh-autosuggestions colorize colored-man-pages fasd tmux zsh-syntax-highlighting)
 
 #start tmux
 export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
@@ -195,3 +195,4 @@ skip_global_compinit=1
 source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 #https://github.com/zsh-users/zsh-autosuggestions
 source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
