@@ -126,13 +126,10 @@ alias cd=z
 # https://github.com/eza-community/eza
 alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
-######## WARNING: Personal aliases
-alias dot=$HOME/codehub/personal/dotfiles
-alias dub=$HOME/codehub/dubsado
-alias dubapi=$HOME/codehub/dubsado/API
-alias jq=jqp # https://jqlang.github.io/jq/tutorial/
-######## WARNING: Personal aliases
+# Comment out this line to disable the use of external file for aliases
+source ~/.zsh_aliases
 
+export MOCK=$HOME/codehub/milwaukeetool/mock-data
 export MYVIMRC=~/.config/nvim/init.vim
 export OPENAI_API_KEY=TODO
 export GOPATH=$HOME/go
@@ -192,3 +189,10 @@ _fzf_comprun() {
 
 # export BAT_THEME="gruvbox-dark"
 export BAT_THEME="Dracula"
+
+# bun completions
+[ -s "/home/developer/.bun/_bun" ] && source "/home/developer/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
