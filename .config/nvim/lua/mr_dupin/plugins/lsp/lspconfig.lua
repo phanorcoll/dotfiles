@@ -125,6 +125,25 @@ return {
           },
         }
       end,
+      ['denols'] = function()
+        lspconfig['denols'].setup {
+          capabilities = capabilities,
+          filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
+          -- root_dir = util.root_pattern('go.work', 'go.mod', '.git')
+          settings = {
+            deno = {
+              enable = true,
+              suggest = {
+                imports = {
+                  hosts = {
+                    ['https://deno.land'] = true,
+                  },
+                },
+              },
+            },
+          },
+        }
+      end,
       -- ["svelte"] = function()
       --  lspconfig["svelte"].setup({
       --    capabilities = capabilities,
