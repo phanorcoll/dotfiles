@@ -136,6 +136,7 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/opt/nvim-linux64/bin
 
 export npm_config_python=$(which python3)
 export NVM_DIR="$HOME/.nvm"
