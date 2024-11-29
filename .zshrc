@@ -125,6 +125,7 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 alias cd=z
 # https://github.com/eza-community/eza
 alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias vim=nvim
 
 # Comment out this line to disable the use of external file for aliases
 source ~/.zsh_aliases
