@@ -17,12 +17,12 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lua',
       'hrsh7th/cmp-nvim-lsp',
-      'saadparwaiz1/cmp_luasnip',
       {
         'L3MON4D3/LuaSnip',
         version = 'v2.*',
         build = 'make install_jsregexp',
       },
+      'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets', -- snippers
       {
         'zbirenbaum/copilot-cmp',
@@ -34,7 +34,6 @@ return {
     config = function()
       require('luasnip.loaders.from_vscode').lazy_load()
       local cmp = require('cmp')
-      local luasnip = require 'luasnip'
       local kind_icons = {
         Text = '',
         Method = '󰆧',
@@ -63,8 +62,11 @@ return {
         TypeParameter = '󰅲',
         Copilot = '',
       }
-
       cmp.setup({
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
         completion = {
           completeopt = 'menu,menuone,preview,noselect',
         },
@@ -84,7 +86,8 @@ return {
         }),
         snippet = {
           expand = function(args)
-            luasnip.lsp_expand(args.body)
+            vim.snippet.expand(args.body)
+            require('luasnip').lsp_expand(args.body)
           end,
         },
         formatting = {
