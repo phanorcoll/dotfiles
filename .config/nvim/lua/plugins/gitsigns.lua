@@ -58,7 +58,7 @@ return {
       map('n', '<leader>hD', function()
         gitsigns.diffthis '~'
       end, { desc = 'Diff this ~' })
-      map('n', '<leader>td', gitsigns.toggle_deleted)
+      -- map('n', '<leader>td', gitsigns.toggle_deleted)
 
       -- Text object
       map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
