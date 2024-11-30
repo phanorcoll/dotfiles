@@ -88,16 +88,50 @@ return {
 
           local opts = { buffer = event.buf }
 
+          opts.desc = 'Show documentation'
           vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-          vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+
+          opts.desc = 'Show LSP definitions'
+          vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
+
+          opts.desc = 'Go to declaration'
           vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+
+          opts.desc = 'View Implementation'
           vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+
+          opts.desc = 'Type definitions'
           vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-          vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+
+          opts.desc = 'Show LSP references'
+          vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
+
+          opts.desc = 'Show Signature Help'
           vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-          vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+
+          opts.desc = 'Rename everywhere'
+          vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+
+          opts.desc = 'Formar buffer'
           vim.keymap.set({ 'n', 'x' }, '<leader>fd', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-          vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+
+          opts.desc = 'Available code actions'
+          vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+
+          opts.desc = 'Show buffer diagnostic'
+          vim.keymap.set('n', 'D', '<cmd>Telescope diagnostics bufnr=0<CR>', opts)
+
+          opts.desc = 'Show line diagnostics'
+          vim.keymap.set('n', 'd', vim.diagnostic.open_float, opts)
+
+          opts.desc = 'Go to Previous diagnostic'
+          vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+
+          opts.desc = 'Go to Next diagnostic'
+          vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+
+          opts.desc = 'Restart LSP'
+          vim.keymap.set('n', '<leader>rs', ':LspRestart<CR>', opts)
 
           -- make sure there is at least one client with formatting capabilities
           if client.supports_method('textDocument/formatting') then
