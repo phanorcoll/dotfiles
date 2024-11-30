@@ -28,8 +28,9 @@ opt.backup = false                                 -- do not keep a backup file
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- set directory where undo files are stored
 opt.undofile = true                                -- save undo history to a file
 
-opt.signcolumn = "yes"                                              -- always show the sign column, to avoid text shifting when signs are displayed
-opt.updatetime = 50                                -- Time in milliseconds to wait before triggering the plugin events after a change
+opt.signcolumn =
+"yes"               -- always show the sign column, to avoid text shifting when signs are displayed
+opt.updatetime = 50 -- Time in milliseconds to wait before triggering the plugin events after a change
 
 ------- functions
 

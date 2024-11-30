@@ -1,7 +1,7 @@
 local keymap = vim.keymap
 
 keymap.set('i', 'jk', '<ESC>', { desc = 'Exit insert mode' })
-keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' }) 
+keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' })
 
 -- window splitting
 keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window verrtically' })
@@ -26,7 +26,7 @@ keymap.set('n', '<TAB>', '<CMD>bnext<CR>')
 keymap.set('n', '<S-TAB>', '<CMD>bprevious<CR>')
 
 -- yank to clipboard
-keymap.set({"n", "v"}, "<leader>y", [["+y]])
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 -- yank line to clipboard
 keymap.set("n", "<leader>Y", [["+Y]])
