@@ -17,6 +17,7 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lua',
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/nvim-cmp',
       {
         'L3MON4D3/LuaSnip',
         version = 'v2.*',
@@ -112,6 +113,22 @@ return {
         experimental = {
           ghost_text = true,
         },
+      })
+
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path', option = { trailing_slash = true } }
+        }, {
+          { name = 'cmdline', option = { treat_trailing_slash = false } }
+        })
       })
     end
   },
