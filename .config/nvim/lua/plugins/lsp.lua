@@ -12,22 +12,95 @@ return {
   {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
+    dependencies = {
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-nvim-lsp',
+      'saadparwaiz1/cmp_luasnip',
+      {
+        'L3MON4D3/LuaSnip',
+        version = 'v2.*',
+        build = 'make install_jsregexp',
+      },
+      'rafamadriz/friendly-snippets', -- snippers
+    },
     config = function()
       local cmp = require('cmp')
+      local luasnip = require 'luasnip'
+      require('luasnip.loaders.from_vscode').lazy_load()
+      local kind_icons = {
+        Text = '',
+        Method = '󰆧',
+        Function = '󰊕',
+        Constructor = '',
+        Field = '󰇽',
+        Variable = '󰂡',
+        Class = '󰠱',
+        Interface = '',
+        Module = '',
+        Property = '󰜢',
+        Unit = '',
+        Value = '󰎠',
+        Enum = '',
+        Keyword = '󰌋',
+        Snippet = '',
+        Color = '󰏘',
+        File = '󰈙',
+        Reference = '',
+        Folder = '󰉋',
+        EnumMember = '',
+        Constant = '󰏿',
+        Struct = '',
+        Event = '',
+        Operator = '󰆕',
+        TypeParameter = '󰅲',
+        Copilot = '',
+      }
 
       cmp.setup({
+        completion = {
+          completeopt = 'menu,menuone,preview,noselect',
+        },
         sources = {
+          { name = 'nvim_lua' },
           { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+          { name = 'path' },
+          { name = 'buffer' },
         },
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
+          ['<CR>'] = cmp.mapping.confirm { select = true },
         }),
         snippet = {
           expand = function(args)
-            vim.snippet.expand(args.body)
+            luasnip.lsp_expand(args.body)
           end,
+        },
+        formatting = {
+          expandable_indicator = false,
+          fields = { 'abbr', 'kind', 'menu' },
+          format = function(entry, vim_item)
+            -- Kind icons
+            vim_item.kind = string.format('%s  %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+            -- Source
+            vim_item.menu = ({
+              nvim_lsp = '[LSP]',
+              nvim_lua = '[api]',
+              luasnip = '[snip]',
+              buffer = '[buffer]',
+              path = '[path]',
+              copilot = '[ai]',
+              ['vim-dadbod-completion'] = '[dadbod]',
+            })[entry.source.name]
+            return vim_item
+          end,
+        },
+        experimental = {
+          ghost_text = true,
         },
       })
     end
@@ -141,7 +214,7 @@ return {
       })
 
       require('mason-lspconfig').setup({
-        ensure_installed = { "lua_ls", "denols" },
+        ensure_installed = { "lua_ls", "denols", "html", "htmx", "templ" },
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
