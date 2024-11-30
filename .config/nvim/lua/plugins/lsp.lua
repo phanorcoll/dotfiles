@@ -24,11 +24,17 @@ return {
         build = 'make install_jsregexp',
       },
       'rafamadriz/friendly-snippets', -- snippers
+      {
+        'zbirenbaum/copilot-cmp',
+        config = function()
+          require('copilot_cmp').setup()
+        end,
+      },
     },
     config = function()
+      require('luasnip.loaders.from_vscode').lazy_load()
       local cmp = require('cmp')
       local luasnip = require 'luasnip'
-      require('luasnip.loaders.from_vscode').lazy_load()
       local kind_icons = {
         Text = '',
         Method = '󰆧',
@@ -63,6 +69,7 @@ return {
           completeopt = 'menu,menuone,preview,noselect',
         },
         sources = {
+          { name = 'copilot' },
           { name = 'nvim_lua' },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
