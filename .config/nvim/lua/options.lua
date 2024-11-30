@@ -2,6 +2,7 @@ local opt = vim.opt
 opt.nu = true -- enable line numbers
 opt.relativenumber = true -- relative line numbers
 opt.clipboard:append 'unnamedplus' --clipboard
+opt.termguicolors = true -- enable true color support
 
 -- tabs & indentation
 opt.tabstop = 2
