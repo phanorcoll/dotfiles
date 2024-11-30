@@ -21,12 +21,13 @@ opt.cursorline = true
 opt.splitright = true
 opt.splitbelow = true
 
-opt.list = true                                    -- show tab characters and trailing whitespace
+opt.list = true -- show tab characters and trailing whitespace
+opt.listchars = "tab:-\\ ,extends:›,precedes:‹,nbsp:·,trail:·" -- show tab characters and trailing whitespace
 
-opt.swapfile = false                               -- do not use a swap file for the buffer
-opt.backup = false                                 -- do not keep a backup file
+opt.swapfile = false -- do not use a swap file for the buffer
+opt.backup = false -- do not keep a backup file
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- set directory where undo files are stored
-opt.undofile = true                                -- save undo history to a file
+opt.undofile = true -- save undo history to a file
 
 opt.signcolumn =
 "yes"               -- always show the sign column, to avoid text shifting when signs are displayed
