@@ -10,10 +10,10 @@ keymap.set('n', '<leader>se', '<C-w>=', { desc = 'Make split equal size' })
 keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' })
 
 -- Pane navigation
-keymap.set('n', '<leader>hh', '<C-w>h', { desc = 'Move to preview pane' })
-keymap.set('n', '<leader>ll', '<C-w>l', { desc = 'Move to next pane' })
-keymap.set('n', '<leader>jj', '<C-w>j', { desc = 'Move to bottom pane' })
-keymap.set('n', '<leader>kk', '<C-w>k', { desc = 'Move to top pane' })
+keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to preview pane' })
+keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to next pane' })
+keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to bottom pane' })
+keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to top pane' })
 
 -- resize window
 keymap.set('n', '<C-Left>', '<C-w><', {})
