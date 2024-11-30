@@ -38,5 +38,6 @@ return {
       "<cmd>TodoTrouble<cr>",
       desc = "Quickfix List (Trouble)",
     },
+    { '<leader>tt', "<cmd>Telescope diagnostics<cr>", desc = 'Trouble in Telescope' },
   },
 }
