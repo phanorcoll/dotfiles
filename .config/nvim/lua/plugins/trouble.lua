@@ -1,4 +1,3 @@
--- TODO: some of the keybindings are not working
 return {
   "folke/trouble.nvim",
   opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -32,6 +31,11 @@ return {
     {
       "<leader>xQ",
       "<cmd>Trouble qflist toggle<cr>",
+      desc = "Quickfix List (Trouble)",
+    },
+    {
+      "<leader>t",
+      "<cmd>TodoTrouble<cr>",
       desc = "Quickfix List (Trouble)",
     },
   },
