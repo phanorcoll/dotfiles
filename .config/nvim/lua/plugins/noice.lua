@@ -18,6 +18,10 @@ return {
   },
 
   config = function()
+    require("notify").setup({
+      background_colour = "#000000",
+    })
+
     require("telescope").load_extension("noice")
     require("noice").setup({
       lsp = {
