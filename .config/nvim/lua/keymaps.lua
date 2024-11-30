@@ -25,3 +25,16 @@ keymap.set('n', '<C-Down>', '<C-w>-', {})
 keymap.set('n', '<TAB>', '<CMD>bnext<CR>')
 keymap.set('n', '<S-TAB>', '<CMD>bprevious<CR>')
 
+-- yank to clipboard
+keymap.set({"n", "v"}, "<leader>y", [["+y]])
+
+-- yank line to clipboard
+keymap.set("n", "<leader>Y", [["+Y]])
+
+-- move a blocks of text up/down with K/J in visual mode
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+
+-- save, quit
+keymap.set("n", "<leader>w", ":w<cr>")
+keymap.set("n", "<leader>c", ":q<cr>")
