@@ -1,3 +1,5 @@
+-- url: https://github.com/kylechui/nvim-surround
+-- desc: A surround text object plugin for Neovim
 return {
   "kylechui/nvim-surround",
   version = "*", -- Use for stability; omit to use `main` branch for the latest features

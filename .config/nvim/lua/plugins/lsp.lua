@@ -1,3 +1,5 @@
+-- url: https://github.com/williamboman/mason.nvim
+-- desc: Plugin manager for Neovim
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }

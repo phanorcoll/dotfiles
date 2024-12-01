@@ -1,6 +1,8 @@
-return{
+-- url: https://github.com/numToStr/Comment.nvim
+-- desc: Comment toggling plugin written in Lua.
+return {
   "numToStr/Comment.nvim",
-  event = {"BufReadPre", "BufNewFile"},
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "JoosepAlviste/nvim-ts-context-commentstring",
   },

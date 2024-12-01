@@ -1,3 +1,5 @@
+-- url: https://github.com/rmagatti/auto-session
+-- desc: Auto save and restore the last session
 return {
   'rmagatti/auto-session',
   lazy = false,

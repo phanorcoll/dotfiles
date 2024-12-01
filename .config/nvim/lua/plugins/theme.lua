@@ -1,3 +1,5 @@
+-- url: https://github.com/catppuccino/nvim
+-- desc: A dark and vibrant color scheme for Neovim
 return {
   "catppuccin/nvim",
   name = "catppuccin",

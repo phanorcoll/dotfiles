@@ -1,4 +1,5 @@
--- https://github.com/mfussenegger/nvim-lint
+-- url: https://github.com/mfussenegger/nvim-lint
+-- desc: An asynchronous linter plugin for Neovim (>= 0.9.5) complementary to the built-in Language Server Protocol support.
 return {
   'mfussenegger/nvim-lint',
   event = { 'BufReadPre', 'BufNewFile' },

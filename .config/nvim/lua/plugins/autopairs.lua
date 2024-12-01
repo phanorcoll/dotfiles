@@ -1,3 +1,5 @@
+-- url: https://github.com/windwp/nvim-autopairs
+-- desc: autopairs for neovim
 return {
   'windwp/nvim-autopairs',
   event = "InsertEnter",

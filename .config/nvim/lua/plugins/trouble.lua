@@ -1,3 +1,5 @@
+-- url: https://github.com/folke/trouble.nvim
+-- desc: A pretty list for showing diagnostics, references, telescope results, quickfix and location list and more.
 return {
   "folke/trouble.nvim",
   opts = {}, -- for default options, refer to the configuration section for custom setup.

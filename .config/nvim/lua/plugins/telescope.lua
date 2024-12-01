@@ -1,3 +1,5 @@
+-- url: https://github.com/nvim-telescope/telescope.nvim
+-- desc: Find, Filter, Preview, Pick. All lua, all the time.
 local builtin = require('telescope.builtin')
 
 return {

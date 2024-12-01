@@ -1,3 +1,5 @@
+-- url: https://github.com/ray-x/go.nvim
+-- desc: Go development plugin for neovim
 return {
   "ray-x/go.nvim",
   dependencies = { -- optional packages

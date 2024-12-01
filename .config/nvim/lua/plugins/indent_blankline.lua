@@ -1,4 +1,5 @@
--- https://github.com/lukas-reineke/indent-blankline.nvim
+-- url: https://github.com/lukas-reineke/indent-blankline.nvim
+-- desc: Display indent guides in Neovim
 return {
   'lukas-reineke/indent-blankline.nvim',
   event = { 'BufReadPre', 'BufNewFile' },

@@ -1,4 +1,5 @@
--- https://github.com/nvim-treesitter/nvim-treesitter
+-- url: https://github.com/nvim-treesitter/nvim-treesitter
+-- desc: Treesitter configurations
 return {
   'nvim-treesitter/nvim-treesitter',
   event = { 'BufReadPre', 'BufNewFile' },

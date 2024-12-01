@@ -1,3 +1,5 @@
+-- url: https://github.com/folke/noice.nvim
+-- desc: A noice message system for Neovim
 return {
   "folke/noice.nvim",
   event = "VeryLazy",

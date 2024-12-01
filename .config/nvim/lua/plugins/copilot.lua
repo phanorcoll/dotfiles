@@ -1,4 +1,5 @@
--- https://github.com/zbirenbaum/copilot.lua
+-- url: https://github.com/zbirenbaum/copilot.lua
+-- desc: A Lua wrapper for Copilot, the AI pair programmer.
 return {
   'zbirenbaum/copilot.lua',
   cmd = 'Copilot',

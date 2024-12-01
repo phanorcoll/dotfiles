@@ -1,3 +1,5 @@
+-- url: https://github.com/folke/todo-comments.nvim
+-- desc: A todo comment plugin for neovim written in lua
 vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<cr>", { desc = "List  TODO comments" })
 return
 {

@@ -1,3 +1,5 @@
+-- url: https://github.com/iamcco/markdown-preview.nvim
+-- desc: Markdown Preview for (Neo)vim
 return {
   "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
