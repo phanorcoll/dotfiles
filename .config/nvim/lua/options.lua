@@ -9,8 +9,10 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
+opt.smartindent = true
+opt.hlsearch = true
 opt.wrap = false
-opt.backspace = 'indent,eol,start'
+opt.backspace = { "indent", "eol", "start" }
 
 -- search settings
 opt.ignorecase = true
@@ -20,6 +22,7 @@ opt.cursorline = true
 -- window splitting
 opt.splitright = true
 opt.splitbelow = true
+opt.splitkeep = "cursor"
 
 opt.list = true -- show tab characters and trailing whitespace
 opt.listchars = "tab:-\\ ,extends:›,precedes:‹,nbsp:·,trail:·" -- show tab characters and trailing whitespace
@@ -33,6 +36,18 @@ opt.signcolumn =
 "yes"               -- always show the sign column, to avoid text shifting when signs are displayed
 opt.updatetime = 50 -- Time in milliseconds to wait before triggering the plugin events after a change
 
+vim.scriptencoding =
+"utf-8"                                                     -- set the encoding of the current script file to UTF-8
+opt.encoding =
+"utf-8"                                                     -- set the encoding of the current buffer to UTF-8
+opt.fileencoding =
+"utf-8"                                                     -- set the encoding of the current file to UTF-8
+
+opt.title = true                                            -- set the window title to the value of the 'titlestring' option
+opt.path:append("**")                                       -- search for files in the current directory and its parent directories
+opt.wildignore:append({ ".git", "node_modules", "vendor" }) -- ignore these files when using wildcards
+
+opt.formatoptions:append("r")                               -- continue comments when pressing Enter
 ------- functions
 
 local CleanOnSave = vim.api.nvim_create_augroup('CleanOnSave', {})
