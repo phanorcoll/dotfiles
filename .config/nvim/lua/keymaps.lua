@@ -38,3 +38,8 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 -- save, quit
 keymap.set("n", "<leader>w", ":w<cr>")
 keymap.set("n", "<leader>c", ":q<cr>")
+
+-- diagnostics
+keymap.set("n", "<leader>dn", function()
+  vim.diagnostic.goto_next({ wrap = true })
+end, { desc = "Go to next diagnostic" })
