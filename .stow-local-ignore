@@ -1,6 +1,7 @@
 .git
 .gitignore
 scripts
-.config/nvim/test 
+.config/nvim/test
+assets
 
 README.*
