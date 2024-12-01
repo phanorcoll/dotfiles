@@ -20,9 +20,7 @@ Set the global Git configuration to use your template file.
 
 ---
 
-<img src="assets/package.png" width="64" style="vertical-align: middle;margin-right:10px" />
-<span style="font-size:30px;font-weight:bold">Neovim plugin list</span>
-
+## Neovim plugin list
 
 - [rmagatti/auto-session](https://github.com/rmagatti/auto-session)
 
