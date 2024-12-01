@@ -48,6 +48,8 @@ return {
         'terraform',
         'tmux',
         'toml',
+        'http',
+        'sql',
       },
       sync_install = false,
       ignore_install = {},
