@@ -1,3 +1,5 @@
+-- url: https://github.com/kdheepak/lazygit.nvim
+-- desc: A lazygit plugin for neovim
 -- nvim v0.8.0
 return {
   "kdheepak/lazygit.nvim",
