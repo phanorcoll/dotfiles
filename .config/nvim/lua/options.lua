@@ -13,6 +13,7 @@ opt.smartindent = true
 opt.hlsearch = true
 opt.wrap = false
 opt.backspace = { "indent", "eol", "start" }
+opt.modifiable = true
 
 -- search settings
 opt.ignorecase = true
