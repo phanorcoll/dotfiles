@@ -19,6 +19,7 @@ opt.modifiable = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.cursorline = true
+opt.cursorcolumn = true
 
 -- window splitting
 opt.splitright = true
