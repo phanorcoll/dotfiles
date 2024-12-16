@@ -1,6 +1,5 @@
 -- url: https://github.com/nvim-telescope/telescope.nvim
 -- desc: Find, Filter, Preview, Pick. All lua, all the time.
-local builtin = require('telescope.builtin')
 
 return {
   'nvim-telescope/telescope.nvim',
@@ -23,11 +22,11 @@ return {
     require('telescope').load_extension('fzf')
   end,
   keys = {
-    { '<leader>ff',       builtin.find_files, desc = 'Telescope find files' },
-    { '<leader>fg',       builtin.live_grep,  desc = 'Telescope live grep' },
-    { '<leader><leader>', builtin.buffers,    desc = 'Telescope buffers' },
-    { '<leader>fh',       builtin.help_tags,  desc = 'Telescope help tags' },
-    { '<leader>fo',       builtin.oldfiles,   desc = 'Telescope find old files' },
-    { '<leader>gf',       builtin.git_files,  desc = 'Telescope find git files' },
+    { '<leader>ff',       "<cmd>Telescope find_files<cr>", desc = 'Telescope find files' },
+    { '<leader>fg',       "<cmd>Telescope live_grep<cr>",  desc = 'Telescope live grep' },
+    { '<leader><leader>', "<cmd>Telescope buffers<cr>",    desc = 'Telescope buffers' },
+    { '<leader>fh',       "<cmd>Telescope help_tags<cr>",  desc = 'Telescope help tags' },
+    { '<leader>fo',       "<cmd>Telescope oldfiles<cr>",   desc = 'Telescope find old files' },
+    { '<leader>gf',       "<cmd>Telescope git_files<cr>",  desc = 'Telescope find git files' },
   },
 }
