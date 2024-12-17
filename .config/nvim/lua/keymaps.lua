@@ -43,3 +43,13 @@ keymap.set("n", "<leader>c", ":q<cr>")
 keymap.set("n", "<leader>dn", function()
   vim.diagnostic.goto_next({ wrap = true })
 end, { desc = "Go to next diagnostic" })
+
+-- Terminal
+keymap.set("n", "<space>st", function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 10)
+end, { desc = "Open terminal" })
+
+keymap.set("t", "<leader>q", "<C-\\><C-n>:q!<CR>", { desc = "Close terminal" })
