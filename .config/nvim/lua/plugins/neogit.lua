@@ -7,7 +7,7 @@ return {
     "sindrets/diffview.nvim", -- optional - Diff integration
 
     -- Only one of these is needed.
-    "ibhagwan/fzf-lua",              -- optional
+    "ibhagwan/fzf-lua", -- optional
   },
   config = function()
     require("neogit").setup {
@@ -25,9 +25,12 @@ return {
       },
     }
     local keymap = vim.keymap
-    local neogit = require('neogit')
-    keymap.set('n', '<leader>gn', function()
-      neogit.open({kind="floating"})
-    end, { desc = 'Open Neogit' })
+    keymap.set("n", "<leader>gs", ":Neogit kind=floating<CR>", { desc = "Open Neogit", silent = true, noremap = true })
+    keymap.set("n", "<leader>gc", ":Neogit commit<CR>",
+      { desc = "Create commit", silent = true, noremap = true })
+    keymap.set("n", "<leader>gp", ":Neogit pull<CR>",
+      { desc = "Pull changes to branch", silent = true, noremap = true })
+    keymap.set("n", "<leader>gP", ":Neogit push<CR>",
+      { desc = "Push changes to branch", silent = true, noremap = true })
   end
 }
