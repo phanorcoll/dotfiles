@@ -54,4 +54,4 @@ end, { desc = "Open terminal" })
 
 keymap.set("t", "<leader>q", "<C-\\><C-n>:q!<CR>", { desc = "Close terminal" })
 
-keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
