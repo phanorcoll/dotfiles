@@ -27,7 +27,7 @@ return {
     local keymap = vim.keymap
     local neogit = require('neogit')
     keymap.set('n', '<leader>gn', function()
-      neogit.open()
+      neogit.open({kind="floating"})
     end, { desc = 'Open Neogit' })
   end
 }
