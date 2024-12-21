@@ -79,10 +79,11 @@ return {
           { name = 'buffer' },
         },
         mapping = cmp.mapping.preset.insert {
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-d>'] = cmp.mapping.scroll_docs(4),
-          ['<CR>'] = cmp.mapping.confirm { select = true },
+          ['<C-e>'] = cmp.mapping.abort(),
+          ['<CR>'] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         },
         snippet = {
           expand = function(args)
@@ -272,6 +273,24 @@ return {
                     },
                   },
                 },
+              },
+            }
+            require('lspconfig').gopls.setup {
+              cmd = { 'gopls' },
+              -- on_attach = on_attach,
+              capabilities = lsp_defaults.capabilities,
+              settings = {
+                gopls = {
+                  experimentalPostfixCompletions = true,
+                  analyses = {
+                    unusedparams = true,
+                    shadow = true,
+                  },
+                  staticcheck = true,
+                },
+              },
+              init_options = {
+                usePlaceholders = true,
               },
             }
           end,
