@@ -13,20 +13,20 @@ return {
       pickers = {
         find_files = {
           theme = 'ivy',
-        }
+        },
       },
       extensions = {
-        fzf = {}
-      }
+        fzf = {},
+      },
     }
-    require('telescope').load_extension('fzf')
+    require('telescope').load_extension 'fzf'
   end,
   keys = {
-    { '<leader>ff',       "<cmd>Telescope find_files<cr>", desc = 'Telescope find files' },
-    { '<leader>fg',       "<cmd>Telescope live_grep<cr>",  desc = 'Telescope live grep' },
-    { '<leader><leader>', "<cmd>Telescope buffers<cr>",    desc = 'Telescope buffers' },
-    { '<leader>fh',       "<cmd>Telescope help_tags<cr>",  desc = 'Telescope help tags' },
-    { '<leader>fo',       "<cmd>Telescope oldfiles<cr>",   desc = 'Telescope find old files' },
-    { '<leader>gf',       "<cmd>Telescope git_files<cr>",  desc = 'Telescope find git files' },
+    { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Telescope find files' },
+    { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Telescope live grep' },
+    { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = 'Telescope buffers' },
+    { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'Telescope help tags' },
+    { '<leader>fo', '<cmd>Telescope oldfiles<cr>', desc = 'Telescope find old files' },
+    { '<leader>gf', '<cmd>Telescope git_files<cr>', desc = 'Telescope find git files' },
   },
 }

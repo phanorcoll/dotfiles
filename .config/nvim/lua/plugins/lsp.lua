@@ -1,8 +1,5 @@
 -- url: https://github.com/williamboman/mason.nvim
 -- desc: Plugin manager for Neovim
-vim.g.markdown_fenced_languages = {
-  "ts=typescript"
-}
 return {
   {
     'williamboman/mason.nvim',
@@ -36,7 +33,7 @@ return {
     },
     config = function()
       require('luasnip.loaders.from_vscode').lazy_load()
-      local cmp = require('cmp')
+      local cmp = require 'cmp'
       local kind_icons = {
         Text = '',
         Method = '󰆧',
@@ -65,7 +62,7 @@ return {
         TypeParameter = '󰅲',
         Copilot = '',
       }
-      cmp.setup({
+      cmp.setup {
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
@@ -81,12 +78,12 @@ return {
           { name = 'path' },
           { name = 'buffer' },
         },
-        mapping = cmp.mapping.preset.insert({
+        mapping = cmp.mapping.preset.insert {
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<CR>'] = cmp.mapping.confirm { select = true },
-        }),
+        },
         snippet = {
           expand = function(args)
             vim.snippet.expand(args.body)
@@ -115,13 +112,13 @@ return {
         experimental = {
           ghost_text = true,
         },
-      })
+      }
 
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
-          { name = 'buffer' }
-        }
+          { name = 'buffer' },
+        },
       })
 
       -- cmp.setup.cmdline(':', {
@@ -132,7 +129,7 @@ return {
       --     { name = 'cmdline', option = { treat_trailing_slash = false } }
       --   })
       -- })
-    end
+    end,
   },
 
   -- LSP
@@ -156,26 +153,12 @@ return {
 
       -- Add cmp_nvim_lsp capabilities settings to lspconfig
       -- This should be executed before you configure any language server
-      lsp_defaults.capabilities = vim.tbl_deep_extend(
-        'force',
-        lsp_defaults.capabilities,
-        require('cmp_nvim_lsp').default_capabilities()
-      )
+      lsp_defaults.capabilities = vim.tbl_deep_extend('force', lsp_defaults.capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local buffer_autoformat = function(bufnr)
         local group = 'lsp_autoformat'
         vim.api.nvim_create_augroup(group, { clear = false })
-        vim.api.nvim_clear_autocmds({ group = group, buffer = bufnr })
-
-        vim.api.nvim_create_autocmd('BufWritePre', {
-          buffer = bufnr,
-          group = group,
-          desc = 'LSP format on save',
-          callback = function()
-            -- note: do not enable async formatting
-            vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-          end,
-        })
+        vim.api.nvim_clear_autocmds { group = group, buffer = bufnr }
       end
 
       -- LspAttach is where you enable features that only work
@@ -216,7 +199,7 @@ return {
           vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 
           opts.desc = 'Formar buffer'
-          vim.keymap.set({ 'n', 'x' }, '<leader>fd', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+          vim.keymap.set({ 'n', 'x' }, '<leader>fd', '<cmd>lua require("conform").format()<cr>', opts)
 
           opts.desc = 'Available code actions'
           vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
@@ -237,51 +220,77 @@ return {
           vim.keymap.set('n', '<leader>rs', ':LspRestart<CR>', opts)
 
           -- make sure there is at least one client with formatting capabilities
-          if client.supports_method('textDocument/formatting') then
+          if client.supports_method 'textDocument/formatting' then
             buffer_autoformat(event.buf)
           end
         end,
       })
 
-      require('mason-lspconfig').setup({
+      require('mason-lspconfig').setup {
         ensure_installed = {
-          "lua_ls",
-          "denols",
-          "html",
-          "htmx",
-          "templ",
-          "gopls",
-          "cssls",
-          "tailwindcss",
-          "bashls",
-          "dockerls",
-          "docker_compose_language_service",
-          "markdown_oxide",
-          "yamlls"
+          'lua_ls',
+          'denols',
+          'html',
+          'htmx',
+          'templ',
+          'gopls',
+          'cssls',
+          'tailwindcss',
+          'bashls',
+          'dockerls',
+          'docker_compose_language_service',
+          'markdown_oxide',
+          'yamlls',
         },
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
+          -- setup deno https://docs.deno.com/runtime/getting_started/setup_your_environment/#neovim-0.6%2B-using-the-built-in-language-server
           function(server_name)
-            require('lspconfig')[server_name].setup({})
+            require('lspconfig')[server_name].setup {}
+            -- require('lspconfig').ts_ls.setup {
+            --   root_dir = require('lspconfig').util.root_pattern 'package.json',
+            --   single_file_support = false,
+            -- }
+            require('lspconfig').denols.setup {
+              cmd = { 'deno', 'lsp' },
+              cmd_env = {
+                NO_COLOR = false,
+              },
+              filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
+              root_dir = require('lspconfig').util.root_pattern('deno.json', 'deno.jsonc', '.git'),
+              settings = {
+                deno = {
+                  enable = true,
+                  lint = false,
+                  suggest = {
+                    imports = {
+                      hosts = {
+                        ['https://deno.land'] = true,
+                      },
+                    },
+                  },
+                },
+              },
+            }
           end,
-        }
-      })
+        },
+      }
 
       -- list of formatters & linters
-      require('mason-tool-installer').setup({
+      require('mason-tool-installer').setup {
         ensure_installed = {
           -- formatters
-          'prettier',
+          'prettierd',
           'stylua',
           'gofumpt',
           'goimports',
           'golines',
           -- linters
           'revive',
-          'markdownlint',
-          'jsonlint',
-          'eslint_d',
+          -- 'markdownlint',
+          -- 'jsonlint',
+          -- 'eslint_d',
         },
         -- if set to true this will check each tool for updates. If updates
         -- are available the tool will be updated. This setting does not
@@ -308,7 +317,7 @@ return {
         -- effect when running manually via ':MasonToolsInstall' etc....
         -- Default: nil
         debounce_hours = 5, -- at least 5 hours between attempts to install/update
-      })
-    end
-  }
+      }
+    end,
+  },
 }
