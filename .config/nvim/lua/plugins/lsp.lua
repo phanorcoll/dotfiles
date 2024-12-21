@@ -241,6 +241,7 @@ return {
           'docker_compose_language_service',
           'markdown_oxide',
           'yamlls',
+          'json-lsp',
         },
         handlers = {
           -- this first function is the "default handler"
@@ -286,10 +287,11 @@ return {
           'gofumpt',
           'goimports',
           'golines',
+          'jq',
           -- linters
           'revive',
           -- 'markdownlint',
-          -- 'jsonlint',
+          'jsonlint',
           -- 'eslint_d',
         },
         -- if set to true this will check each tool for updates. If updates
