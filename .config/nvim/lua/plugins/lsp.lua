@@ -87,7 +87,7 @@ return {
         },
         snippet = {
           expand = function(args)
-            vim.snippet.expand(args.body)
+            -- vim.snippet.expand(args.body) -- having this line will cause an error, duplicating the selection
             require('luasnip').lsp_expand(args.body)
           end,
         },
