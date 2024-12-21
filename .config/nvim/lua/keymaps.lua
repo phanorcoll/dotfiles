@@ -26,32 +26,31 @@ keymap.set('n', '<TAB>', '<CMD>bnext<CR>')
 keymap.set('n', '<S-TAB>', '<CMD>bprevious<CR>')
 
 -- yank to clipboard
-keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 
 -- yank line to clipboard
-keymap.set("n", "<leader>Y", [["+Y]])
+keymap.set('n', '<leader>Y', [["+Y]])
 
 -- move a blocks of text up/down with K/J in visual mode
-keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
-keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+keymap.set('v', 'K', ':m \'<-2<CR>gv=gv', { silent = true })
+keymap.set('v', 'J', ':m \'>+1<CR>gv=gv', { silent = true })
 
 -- save, quit
-keymap.set("n", "<leader>w", ":w<cr>")
-keymap.set("n", "<leader>c", ":q<cr>")
+keymap.set('n', '<leader>w', ':w<cr>')
 
 -- diagnostics
-keymap.set("n", "<leader>dn", function()
-  vim.diagnostic.goto_next({ wrap = true })
-end, { desc = "Go to next diagnostic" })
+keymap.set('n', '<leader>dn', function()
+  vim.diagnostic.goto_next { wrap = true }
+end, { desc = 'Go to next diagnostic' })
 
 -- Terminal
-keymap.set("n", "<space>st", function()
+keymap.set('n', '<space>st', function()
   vim.cmd.vnew()
   vim.cmd.term()
-  vim.cmd.wincmd("J")
+  vim.cmd.wincmd 'J'
   vim.api.nvim_win_set_height(0, 10)
-end, { desc = "Open terminal" })
+end, { desc = 'Open terminal' })
 
-keymap.set("t", "<leader>q", "<C-\\><C-n>:q!<CR>", { desc = "Close terminal" })
+keymap.set('t', '<leader>q', '<C-\\><C-n>:q!<CR>', { desc = 'Close terminal' })
 
-keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+keymap.set('t', '<esc><esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
