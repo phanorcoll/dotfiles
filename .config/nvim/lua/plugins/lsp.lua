@@ -242,7 +242,6 @@ return {
           'docker_compose_language_service',
           'markdown_oxide',
           'yamlls',
-          'json-lsp',
         },
         handlers = {
           -- this first function is the "default handler"
