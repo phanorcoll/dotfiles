@@ -23,10 +23,12 @@ return {
   end,
   keys = {
     { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Telescope find files' },
-    { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Telescope live grep' },
+    { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Telescope live grep in working directory' },
     { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = 'Telescope buffers' },
     { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'Telescope help tags' },
     { '<leader>fo', '<cmd>Telescope oldfiles<cr>', desc = 'Telescope find old files' },
     { '<leader>gf', '<cmd>Telescope git_files<cr>', desc = 'Telescope find git files' },
+    { '<leader>fw', '<cmd>Telescope grep_string<cr>', desc = 'Searches for the string under your cursor or selection in your current working directory' },
+    { '<leader>sw', '<cmd>Telescope spell_suggest<cr>', desc = 'Lists spelling suggestions for the current word under the cursor ' },
   },
 }
