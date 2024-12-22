@@ -2,6 +2,7 @@
 -- desc: A highly configurable dashboard for neovim built using alpha.nvim
 return {
   'goolord/alpha-nvim',
+  event = 'BufWinEnter',
   config = function()
     local dashboard = require 'alpha.themes.dashboard'
     dashboard.section.header.val = {
