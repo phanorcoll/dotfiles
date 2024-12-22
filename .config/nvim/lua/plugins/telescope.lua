@@ -21,12 +21,16 @@ return {
           },
         },
       },
+      -- TODO: Add more pickers
       pickers = {
+        live_grep = {
+          theme = 'ivy',
+        },
         find_files = {
           theme = 'ivy',
         },
         grep_string = {
-          theme = 'cursor',
+          theme = 'ivy',
         },
       },
       extensions = {
