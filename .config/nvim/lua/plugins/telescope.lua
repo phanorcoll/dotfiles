@@ -62,5 +62,6 @@ return {
     { '<leader>fw', '<cmd>Telescope grep_string<cr>', desc = 'Searches for the string under your cursor or selection in your current working directory' },
     { '<leader>sw', '<cmd>Telescope spell_suggest<cr>', desc = 'Lists spelling suggestions for the current word under the cursor ' },
     { '<leader>em', '<cmd>Telescope emoji<cr>', desc = 'Lists emojis ' },
+    { '<leader>gm', '<cmd>Telescope gitmoji<cr>', desc = 'Create commit header with gitmoji ' },
   },
 }
