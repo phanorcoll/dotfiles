@@ -51,6 +51,7 @@ return {
     require('telescope').load_extension 'fzf'
     require('telescope').load_extension 'emoji'
     require('telescope').load_extension 'gitmoji'
+    require('telescope').load_extension 'git_diffs'
   end,
   keys = {
     { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Telescope find files' },
@@ -63,5 +64,6 @@ return {
     { '<leader>sw', '<cmd>Telescope spell_suggest<cr>', desc = 'Lists spelling suggestions for the current word under the cursor ' },
     { '<leader>em', '<cmd>Telescope emoji<cr>', desc = 'Lists emojis ' },
     { '<leader>gm', '<cmd>Telescope gitmoji<cr>', desc = 'Create commit header with gitmoji ' },
+    { '<leader>gd', '<cmd>Telescope git_diffs  diff_commits<cr>', desc = 'List git diffs to open with Diffview ' },
   },
 }
