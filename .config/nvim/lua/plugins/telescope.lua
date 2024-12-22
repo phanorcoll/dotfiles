@@ -39,9 +39,8 @@ return {
               if not msg then
                 return
               end
-              local emoji_text = entry.value.value
-              local full_message = emoji_text .. ' ' .. msg
-              vim.fn.setreg('+', full_message)
+              local commit_msg = string.format('"%s %s"', emoji, msg)
+              vim.fn.setreg('+', commit_msg)
             end)
           end,
         },
