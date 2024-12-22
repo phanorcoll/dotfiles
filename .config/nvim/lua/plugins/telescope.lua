@@ -1,6 +1,5 @@
 -- url: https://github.com/nvim-telescope/telescope.nvim
 -- desc: Find, Filter, Preview, Pick. All lua, all the time.
-
 return {
   'nvim-telescope/telescope.nvim',
   tag = '0.1.8',
@@ -33,11 +32,25 @@ return {
       extensions = {
         fzf = {},
         emoji = {},
+        gitmoji = {
+          action = function(entry)
+            local emoji = entry.value.value
+            vim.ui.input({ prompt = 'Enter commit message: ' .. emoji .. ' ' }, function(msg)
+              if not msg then
+                return
+              end
+              local emoji_text = entry.value.text
+              local full_message = emoji_text .. ' ' .. msg
+              vim.fn.setreg('+', full_message)
+            end)
+          end,
+        },
       },
     }
 
     require('telescope').load_extension 'fzf'
     require('telescope').load_extension 'emoji'
+    require('telescope').load_extension 'gitmoji'
   end,
   keys = {
     { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Telescope find files' },
