@@ -1,3 +1,5 @@
+-- url: https://github.com/olacin/telescope-gitmoji.nvim
+-- desc: Telescope extension to list gitmojis
 return {
   'olacin/telescope-gitmoji.nvim',
   config = function()
