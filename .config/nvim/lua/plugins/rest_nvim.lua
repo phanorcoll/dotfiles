@@ -1,5 +1,6 @@
 -- url: https://github.com/rest-nvim/rest.nvim
 -- desc: HTTP client for Neovim inspired by Postman and HTTPie
+-- examples: https://github.com/rest-nvim/rest.nvim/tree/main/spec/examples
 return {
   'rest-nvim/rest.nvim',
   keys = {
