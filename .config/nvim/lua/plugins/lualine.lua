@@ -73,7 +73,17 @@ return {
         lualine_a = {},
         lualine_b = { 'branch' },
         lualine_c = {},
-        lualine_x = { diff, diagnostics, 'filename', 'filetype' },
+        lualine_x = {
+          {
+            'rest',
+            icon = '',
+            fg = '#428890',
+          },
+          diff,
+          diagnostics,
+          'filename',
+          'filetype',
+        },
         lualine_y = {},
         lualine_z = {},
       },
