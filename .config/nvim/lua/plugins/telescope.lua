@@ -57,6 +57,7 @@ return {
     require('telescope').load_extension 'gitmoji'
     require('telescope').load_extension 'git_diffs'
     require('telescope').load_extension 'rest'
+    require('telescope').load_extension 'git_worktree'
   end,
   keys = {
     { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Telescope find files' },
