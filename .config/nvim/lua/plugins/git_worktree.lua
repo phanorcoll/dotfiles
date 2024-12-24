@@ -1,5 +1,8 @@
 -- url: https://github.com/ThePrimeagen/git-worktree.nvim
 -- desc: Git worktree management
+-- <Enter> - switches to that worktree
+-- <c-d> - deletes that worktree
+-- <c-f> - toggles forcing of the next deletion
 return {
   'ThePrimeagen/git-worktree.nvim',
   keys = {
