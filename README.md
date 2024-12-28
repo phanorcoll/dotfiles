@@ -65,13 +65,6 @@ Set the global Git configuration to use your template file.
 ---
 
 
-[mistricky/codesnap.nvim](https://github.com/mistricky/codesnap.nvim)
-
-- **Description:** A neovim plugin to create code snapshots with ease.
-
----
-
-
 [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 
 - **Description:** Comment toggling plugin written in Lua.
@@ -96,6 +89,13 @@ Set the global Git configuration to use your template file.
 [xiyaowong/telescope-emoji.nvim](https://github.com/xiyaowong/telescope-emoji.nvim)
 
 - **Description:** Telescope extension to search and insert emojis
+
+---
+
+
+[ThePrimeagen/git-worktree.nvim](https://github.com/ThePrimeagen/git-worktree.nvim)
+
+- **Description:** Git worktree management
 
 ---
 
@@ -187,6 +187,20 @@ Set the global Git configuration to use your template file.
 [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
 
 - **Description:** File explorer that lets you edit your filesystem like a normal Neovim buffer.
+
+---
+
+
+[rest-nvim/rest.nvim](https://github.com/rest-nvim/rest.nvim)
+
+- **Description:** HTTP client for Neovim inspired by Postman and HTTPie
+
+---
+
+
+[michaelrommel/nvim-silicon](https://github.com/michaelrommel/nvim-silicon)
+
+- **Description:** nvim-silicon is a plugin for Neovim that allows you to generate images of your code using silicon.
 
 ---
 
