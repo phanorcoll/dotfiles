@@ -55,15 +55,12 @@ return {
     -- it is set to nil, so you can override it, if you do not set it, we try the
     -- filetype first, and if that fails, the extension
     -- language = nil,
-    language = function()
-      return vim.bo.filetype
-    end,
     -- language = function()
-    -- 	return vim.fn.fnamemodify(
-    -- 		vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()),
-    -- 		":e"
-    -- 	)
+    --   return vim.bo.filetype
     -- end,
+    language = function()
+      return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ':e')
+    end,
 
     -- if the shadow below the os window should have be blurred
     shadow_blur_radius = 16,
