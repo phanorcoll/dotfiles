@@ -126,6 +126,8 @@ alias cd=z
 # https://github.com/eza-community/eza
 alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias vim=nvim
+#https://github.com/jesseduffield/lazydocker
+alias ld=lazydocker
 
 # Comment out this line to disable the use of external file for aliases
 source ~/.zsh_aliases
@@ -161,7 +163,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
   --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#87afaf
   --color=border:#262626,label:#aeaeae,query:#d9d9d9
-  --border="sharp" --border-label="󰨽 Start searching!" --border-label-pos="1" 
+  --border="sharp" --border-label="󰨽 Start searching!" --border-label-pos="1"
   --preview-window="border-bold"
   --padding="0" --margin="0" --prompt="󰩉 " --marker=" "
   --pointer=" " --separator="" --scrollbar="│" --layout="reverse"
@@ -187,7 +189,7 @@ _fzf_comprun() {
     ssh)          fzf --preview 'dig {}' "$@" ;;
     *)            fzf --preview "--preview 'bat -n --color=always --line-range :500 {}" "$@" ;;
   esac
-  
+
 }
 
 # export BAT_THEME="gruvbox-dark"
