@@ -150,16 +150,18 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(zoxide init zsh)"
 
+# Set up fzf key bindings and fuzzy completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #------------------------- FZF -------------------------
+source <(fzf --zsh)
 # https://github.com/junegunn/fzf
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix --exclude .git"
-# fzf theme
-# https://vitormv.github.io/fzf-themes/
+# # fzf theme
+# # https://vitormv.github.io/fzf-themes/
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#d0d0d0,fg+:#d0d0d0,bg:#121212,bg+:#262626
   --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
@@ -169,7 +171,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --preview-window="border-bold"
   --padding="0" --margin="0" --prompt="󰩉 " --marker=" "
   --pointer=" " --separator="" --scrollbar="│" --layout="reverse"
-  --info="right"'
+  --info="right"
+  --height="70%"'
 
 _fzf_compgen_path() {
   fd --hidden --exclude .git . "$1"
@@ -182,17 +185,6 @@ _fzf_compgen_dir() {
 source ~/.fzf-git.sh/fzf-git.sh
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=header,grid --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
-_fzf_comprun() {
-  local command=$1
-  shift
-  case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo \${}'" "$@" ;;
-    ssh)          fzf --preview 'dig {}' "$@" ;;
-    *)            fzf --preview "--preview 'bat -n --color=always --line-range :500 {}" "$@" ;;
-  esac
-
-}
 
 # export BAT_THEME="gruvbox-dark"
 export BAT_THEME="Dracula"
