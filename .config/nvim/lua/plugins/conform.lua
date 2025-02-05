@@ -13,7 +13,7 @@ return {
       javascript = { 'prettierd' },
       typescript = { 'prettierd' },
       typescriptreact = { 'prettierd' },
-      Markdown = { 'denols' },
+      Markdown = { 'prettierd' },
       json = { 'jq' },
       go = { 'gofmt', 'goimports' },
     },
