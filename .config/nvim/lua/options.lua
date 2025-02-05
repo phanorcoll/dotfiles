@@ -77,3 +77,5 @@ vim.diagnostic.config {
     },
   },
 }
+
+vim.o.sessionoptions = 'localoptions'
