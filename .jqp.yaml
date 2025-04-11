@@ -1,0 +1,4 @@
+theme:
+  name: "nord" # controls the color scheme
+  chromaStyleOverrides: # override parts of the chroma style
+    kc: "#009900 underline" # keys use the chroma short names
