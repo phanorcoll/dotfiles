@@ -139,7 +139,7 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
 export PATH=$PATH:~/.local/bin
-export PATH=$PATH:/opt/nvim-linux64/bin
+export PATH=$PATH:/opt/nvim-linux/bin
 export XDG_RUNTIME_DIR=/tmp/runtime-$(id -u)
 export NVIM_LISTEN_ADDRESS=/tmp/nvim
 
