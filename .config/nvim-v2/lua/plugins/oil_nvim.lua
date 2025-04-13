@@ -119,8 +119,6 @@ return {
         ["g\\"] = { "actions.toggle_trash", mode = "n" },
       },
     })
-    local keymap = vim.keymap
-    keymap.set("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Toggle oil" })
   end,
     lazy=false
 }
