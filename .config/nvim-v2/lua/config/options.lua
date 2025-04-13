@@ -5,6 +5,13 @@ opt.relativenumber = true -- relative line numbers
 opt.clipboard:append 'unnamedplus' --clipboard
 opt.termguicolors = true -- enable true color support
 
+opt.undodir = os.getenv 'HOME' .. '/.vim/undodir' -- set directory where undo files are stored
+opt.undofile = true -- save undo history to a file
+
+vim.scriptencoding = 'utf-8' -- set the encoding of the current script file to UTF-8
+opt.encoding = 'utf-8' -- set the encoding of the current buffer to UTF-8
+opt.fileencoding = 'utf-8' -- set the encoding of the current file to UTF-8
+
 -- dont show the mode since its already in the status bar
 opt.showmode = false
 
@@ -71,3 +78,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- remove trailing whitespace from all lines before saving a file)
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+  group = CleanOnSave,
+  pattern = '*',
+  command = [[%s/\s\+$//e]],
+})
+
+vim.diagnostic.config {
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '✘',
+      [vim.diagnostic.severity.WARN] = '▲',
+      [vim.diagnostic.severity.HINT] = '⚑',
+      [vim.diagnostic.severity.INFO] = '»',
+    },
+  },
+}
