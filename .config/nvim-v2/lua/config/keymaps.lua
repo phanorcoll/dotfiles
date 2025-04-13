@@ -45,3 +45,6 @@ vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv', { silent = true })
 -- Tabs to move through Buffers
 vim.keymap.set('n', '<TAB>', '<CMD>bnext<CR>')
 vim.keymap.set('n', '<S-TAB>', '<CMD>bprevious<CR>')
+
+-- close current buffer
+vim.keymap.set('n', '<leader>cb','<CMD>bd<CR>', {desc = 'Close current buffer', silent = true})
