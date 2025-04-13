@@ -13,6 +13,7 @@ vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diag
 vim.keymap.set('n', '<leader>dn', function()
   vim.diagnostic.goto_next { wrap = true }
 end, { desc = 'Go to next diagnostic' })
+vim.keymap.set('n', '<leader>dl', function() vim.diagnostic.open_float() end, {desc = 'Open line diagnostic'} )
 
 -- window splitting
 vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window verrtically' })
