@@ -2,14 +2,14 @@
 vim.keymap.set('i', 'jk', '<ESC>', { desc = 'Exit insert mode' })
 
 -- save file
-vim.keymap.set('n', '<leader>w', ':w<cr>')
+vim.keymap.set('n', '<leader>w', ':w<cr>', {desc = 'Saves file'})
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<leader>dn', function()
   vim.diagnostic.goto_next { wrap = true }
 end, { desc = 'Go to next diagnostic' })
@@ -36,7 +36,7 @@ vim.keymap.set('n', '<C-Up>', '<C-w>+', {})
 vim.keymap.set('n', '<C-Down>', '<C-w>-', {})
 
 -- yank line to clipboard
-vim.keymap.set('n', '<leader>Y', [["+Y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank line to clipboard'})
 
 -- move a blocks of text up/down with K/J in visual mode
 vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv', { silent = true })
