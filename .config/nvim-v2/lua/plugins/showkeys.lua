@@ -4,7 +4,10 @@ return {
     "nvzone/showkeys", 
     lazy = false,    -- Load on startup instead of waiting for a command
     config = function()
-      -- Automatically toggle Showkeys on startup
+      require("showkeys").setup({
+        maxkeys=5
+      })
+
       vim.cmd("ShowkeysToggle")
     end
 }
