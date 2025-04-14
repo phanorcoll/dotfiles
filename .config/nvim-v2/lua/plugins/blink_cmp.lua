@@ -66,6 +66,9 @@ return {
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			default = { "copilot", "lsp", "path", "snippets", "buffer", "emoji" },
+			per_filetype = {
+				sql = { "snippets", "dadbod", "buffer" },
+			},
 			providers = {
 				emoji = {
 					module = "blink-emoji",
@@ -87,6 +90,7 @@ return {
 					score_offset = 100,
 					async = true,
 				},
+				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 			},
 		},
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
