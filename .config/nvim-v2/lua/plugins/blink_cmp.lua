@@ -6,6 +6,7 @@ return {
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		"moyiz/blink-emoji.nvim",
+		"fang2hou/blink-copilot",
 	},
 
 	-- use a release tag to download pre-built binaries
@@ -64,7 +65,7 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "emoji" },
+			default = { "copilot", "lsp", "path", "snippets", "buffer", "emoji" },
 			providers = {
 				emoji = {
 					module = "blink-emoji",
@@ -79,6 +80,12 @@ return {
 							vim.o.filetype
 						)
 					end,
+				},
+				copilot = {
+					name = "copilot",
+					module = "blink-copilot",
+					score_offset = 100,
+					async = true,
 				},
 			},
 		},
