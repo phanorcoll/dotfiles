@@ -183,17 +183,26 @@ return {
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
 			bashls = {},
+			cssls = {},
+			dockerls = {},
+			docker_compose_language_service = {},
 			-- clangd = {},
 			gopls = {
 				settings = {
-					experimentalPostfixCompletions = true,
-					analyses = {
-						unusedparams = true,
-						shadow = true,
+					gopls = {
+						experimentalPostfixCompletions = true,
+						analyses = {
+							unusedparams = true,
+							shadow = true,
+						},
+						staticcheck = true,
 					},
-					staticcheck = true,
+				},
+				init_options = {
+					usePlaceholders = true,
 				},
 			},
+			html = {},
 			-- pyright = {},
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -203,6 +212,8 @@ return {
 			--
 			-- But for many setups, the LSP (`ts_ls`) will work just fine
 			ts_ls = {},
+			templ = {},
+			tailwindcss = {},
 			--
 
 			lua_ls = {
@@ -246,6 +257,7 @@ return {
 			-- linters
 			"revive", -- for goland
 			"eslint_d", -- for javascript/typescript
+			"jsonlint", -- for json
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
