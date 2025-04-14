@@ -1,5 +1,5 @@
 -- url: https://github.com/stevearc/conform.nvim
--- desc: A Neovim plugin for formatting and linting configuration files.
+-- desc: Lightweight yet powerful formatter plugin for Neovim.
 return {
 	"stevearc/conform.nvim",
 	opts = {
