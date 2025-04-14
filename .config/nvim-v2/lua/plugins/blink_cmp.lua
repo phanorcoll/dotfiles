@@ -43,6 +43,17 @@ return {
 			documentation = { auto_show = true },
 			menu = {
 				border = "rounded",
+				draw = {
+					columns = {
+						{
+							"kind_icon",
+						},
+						{ "label" },
+						{
+							"kind",
+						},
+					},
+				},
 			},
 			ghost_text = {
 				enabled = true,
