@@ -3,7 +3,10 @@
 return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
-	dependencies = { "rafamadriz/friendly-snippets" },
+	dependencies = {
+		"rafamadriz/friendly-snippets",
+		"moyiz/blink-emoji.nvim",
+	},
 
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
@@ -50,7 +53,23 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "snippets", "buffer", "emoji" },
+			providers = {
+				emoji = {
+					module = "blink-emoji",
+					name = "Emoji",
+					score_offset = 15, -- Tune by preference
+					opts = { insert = true }, -- Insert emoji (default) or complete its name
+					should_show_items = function()
+						return vim.tbl_contains(
+							-- Enable emoji completion only for git commits and markdown.
+							-- By default, enabled for all file-types.
+							{ "gitcommit", "markdown" },
+							vim.o.filetype
+						)
+					end,
+				},
+			},
 		},
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
 		-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
