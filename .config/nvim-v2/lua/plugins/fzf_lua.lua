@@ -9,18 +9,23 @@ return {
 		config.defaults.actions.files["ctrl-t"] = actions.open
 		require("fzf-lua").setup({
 			-- Customize the window/popup layout
+			fzf_colors = {
+				true,
+				bg = "-1",
+			},
+			files = {
+				previewer = "bat",
+				-- Custom fzf options
+			},
 			winopts = {
-				-- For example, height & width can be adjusted as you like
-				-- height = 0.50,
 				width = 0.80,
 
 				-- FZF-Lua preview configuration
 				preview = {
-					-- 'vertical' means preview is stacked vertically relative to the finder
-					-- 'down:50%' places the preview at the bottom using 50% of the window
 					layout = "vertical",
 					vertical = "down:70%",
 				},
+				border = "rounded",
 			},
 		})
 	end,
