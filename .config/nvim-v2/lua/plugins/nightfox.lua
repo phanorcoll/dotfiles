@@ -18,6 +18,6 @@ return {
 			specs = {},
 			highlights = {},
 		})
-		vim.cmd("colorscheme nordfox")
+		vim.cmd("colorscheme terafox")
 	end,
 }
