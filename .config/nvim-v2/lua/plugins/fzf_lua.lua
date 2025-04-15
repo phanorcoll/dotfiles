@@ -14,7 +14,7 @@ return {
 				bg = "-1",
 			},
 			files = {
-				previewer = "bat",
+				-- previewer = "bat",
 				-- Custom fzf options
 			},
 			winopts = {
