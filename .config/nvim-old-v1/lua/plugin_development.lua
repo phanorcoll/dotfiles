@@ -1,0 +1,14 @@
+-- -- Keymap to reload the plugin
+-- vim.api.nvim_set_keymap('n', '<Leader>rp', ':lua ReloadMyPlugin()<CR>', { noremap = true, silent = true })
+--
+-- -- Function to reload the plugin
+-- function ReloadMyPlugin()
+--   -- Unload the plugin module
+--   package.loaded['my_plugin'] = nil
+--   package.loaded['my_plugin.hello'] = nil
+--
+--   -- Load the plugin module
+--   require('my_plugin').setup {}
+--
+--   print("Plugin reloaded!")
+-- end
