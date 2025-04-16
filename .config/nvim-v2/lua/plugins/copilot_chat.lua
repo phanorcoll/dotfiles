@@ -41,6 +41,7 @@ return {
 	config = function()
 		require("fzf-lua").register_ui_select()
 		require("CopilotChat").setup({
+			use_ui_select = true,
 			highlight_headers = false,
 			separator = "---",
 			error_header = "> [!ERROR] Error",
