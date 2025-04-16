@@ -141,7 +141,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOBIN
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/opt/nvim-linux/bin
 # export XDG_RUNTIME_DIR=/tmp/runtime-$(id -u)
-export NVIM_LISTEN_ADDRESS=/tmp/nvim
+# export NVIM_LISTEN_ADDRESS=/tmp/nvim
 
 export npm_config_python=$(which python3)
 export NVM_DIR="$HOME/.nvm"

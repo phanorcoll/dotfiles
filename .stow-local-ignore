@@ -2,6 +2,7 @@
 .gitignore
 scripts
 .config/nvim/test
+.config/nvim-old-v1
 assets
 
 README.*
