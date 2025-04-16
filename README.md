@@ -23,18 +23,7 @@ Set the global Git configuration to use your template file.
 ## Neovim plugin List
 
 
-[goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
-
-- **Description:** A highly configurable dashboard for neovim built using alpha.nvim
-
----
-
-
-[rmagatti/auto-session](https://github.com/rmagatti/auto-session)
-
-- **Description:** Auto save and restore the last session
-
----
+# Neovim plugin List
 
 
 [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
@@ -44,16 +33,9 @@ Set the global Git configuration to use your template file.
 ---
 
 
-[FabijanZulj/blame.nvim](https://github.com/FabijanZulj/blame.nvim)
+[cmp.saghen.dev/](https://cmp.saghen.dev/)
 
-- **Description:** Git Blame plugin for neovim
-
----
-
-
-[uloco/bluloco.nvim](https://github.com/uloco/bluloco.nvim)
-
-- **Description:** A fancy and sophisticated designer neovim theme built with lush.nvim. It features a much more comprehensive usage of syntax scopes and color consistency, with due regards to aesthetics, contrast and readability.
+- **Description:** blink.cmp is a completion plugin with support for LSPs and external sources that updates on every keystroke with minimal overhead.
 
 ---
 
@@ -65,16 +47,9 @@ Set the global Git configuration to use your template file.
 ---
 
 
-[numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
-
-- **Description:** Comment toggling plugin written in Lua.
-
----
-
-
 [stevearc/conform.nvim](https://github.com/stevearc/conform.nvim)
 
-- **Description:** A Neovim plugin for formatting and linting configuration files.
+- **Description:** Lightweight yet powerful formatter plugin for Neovim.
 
 ---
 
@@ -86,23 +61,23 @@ Set the global Git configuration to use your template file.
 ---
 
 
-[xiyaowong/telescope-emoji.nvim](https://github.com/xiyaowong/telescope-emoji.nvim)
+[CopilotC-Nvim/CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim)
 
-- **Description:** Telescope extension to search and insert emojis
-
----
-
-
-[ThePrimeagen/git-worktree.nvim](https://github.com/ThePrimeagen/git-worktree.nvim)
-
-- **Description:** Git worktree management
+- **Description:** CopilotChat.nvim is a Neovim plugin that brings GitHub Copilot Chat capabilities directly into your editor
 
 ---
 
 
-[olacin/telescope-gitmoji.nvim](https://github.com/olacin/telescope-gitmoji.nvim)
+[kristijanhusak/vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui)
 
-- **Description:** Telescope extension to list gitmojis
+- **Description:** A UI for vim-dadbod, a database client for Vim and Neovim. It provides a simple interface to interact with databases, run queries, and view results.
+
+---
+
+
+[ibhagwan/fzf-lua](https://github.com/ibhagwan/fzf-lua)
+
+- **Description:** Wrapper around fzf for neovim. Replaces Telescope for searching
 
 ---
 
@@ -121,20 +96,6 @@ Set the global Git configuration to use your template file.
 ---
 
 
-[lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-
-- **Description:** Display indent guides in Neovim
-
----
-
-
-[kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
-
-- **Description:** A lazygit plugin for neovim
-
----
-
-
 [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
 
 - **Description:** An asynchronous linter plugin for Neovim (&gt;= 0.9.5) complementary to the built-in Language Server Protocol support.
@@ -142,23 +103,16 @@ Set the global Git configuration to use your template file.
 ---
 
 
-[williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
+[neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
-- **Description:** Plugin manager for Neovim
-
----
-
-
-[nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-
-- **Description:** A blazing fast and easy to configure neovim statusline plugin written in pure lua.
+- **Description:** nvim-lspconfig is a &#34;data only&#34; repo, providing basic, default Nvim LSP client configurations for various LSP servers.
 
 ---
 
 
-[iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
+[readmes/mini-icons.md](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-icons.md)
 
-- **Description:** Markdown Preview for (Neo)vim
+- **Description:** Icon provider for the mini.nvim plugins
 
 ---
 
@@ -170,6 +124,13 @@ Set the global Git configuration to use your template file.
 ---
 
 
+[EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim)
+
+- **Description:** A highly customizable theme for vim and neovim with support for lsp, treesitter and a variety of plugins.
+
+---
+
+
 [folke/noice.nvim](https://github.com/folke/noice.nvim)
 
 - **Description:** A noice message system for Neovim
@@ -177,23 +138,23 @@ Set the global Git configuration to use your template file.
 ---
 
 
-[nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
-
-- **Description:** A file explorer tree for neovim written in lua
-
----
-
-
 [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
 
-- **Description:** File explorer that lets you edit your filesystem like a normal Neovim buffer.
+- **Description:** File explorer like a text buffer
 
 ---
 
 
-[rest-nvim/rest.nvim](https://github.com/rest-nvim/rest.nvim)
+[MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 
-- **Description:** HTTP client for Neovim inspired by Postman and HTTPie
+- **Description:** Plugin to improve viewing Markdown files in Neovim
+
+---
+
+
+[nvzone/showkeys](https://github.com/nvzone/showkeys)
+
+- **Description:** Eye-candy keys screencaster for Neovim
 
 ---
 
@@ -205,23 +166,16 @@ Set the global Git configuration to use your template file.
 ---
 
 
-[kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
+[tpope/vim-sleuth](https://github.com/tpope/vim-sleuth)
 
-- **Description:** A surround text object plugin for Neovim
-
----
-
-
-[nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-
-- **Description:** Find, Filter, Preview, Pick. All lua, all the time.
+- **Description:** automatically adjusts &#39;shiftwidth&#39; and &#39;expandtab&#39; heuristically based on the current file.
 
 ---
 
 
-[paopaol/telescope-git-diffs.nvim](https://github.com/paopaol/telescope-git-diffs.nvim)
+[echasnovski/mini.statusline](https://github.com/echasnovski/mini.statusline)
 
-- **Description:** A telescope extension to show git diffs
+- **Description:** Minimal, fast statusline plugin
 
 ---
 
@@ -242,7 +196,201 @@ Set the global Git configuration to use your template file.
 
 [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
 
-- **Description:** A pretty list for showing diagnostics, references, telescope results, quickfix and location list and more.
+- **Description:** A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing..
+
+---
+
+
+[folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+
+- **Description:** WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
+
+---
+
+
+generated by [doc bot](https://github.com/phanorcoll/doc_bot)
+
+# Neovim plugin List
+
+
+[windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+
+- **Description:** autopairs for neovim
+
+---
+
+
+[cmp.saghen.dev/](https://cmp.saghen.dev/)
+
+- **Description:** blink.cmp is a completion plugin with support for LSPs and external sources that updates on every keystroke with minimal overhead.
+
+---
+
+
+[akinsho/bufferline.nvim](https://githob.com/akinsho/bufferline.nvim)
+
+- **Description:** Bufferline is a snazzy buffer line for Neovim
+
+---
+
+
+[stevearc/conform.nvim](https://github.com/stevearc/conform.nvim)
+
+- **Description:** Lightweight yet powerful formatter plugin for Neovim.
+
+---
+
+
+[zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
+
+- **Description:** A Lua wrapper for Copilot, the AI pair programmer.
+
+---
+
+
+[CopilotC-Nvim/CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim)
+
+- **Description:** CopilotChat.nvim is a Neovim plugin that brings GitHub Copilot Chat capabilities directly into your editor
+
+---
+
+
+[kristijanhusak/vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui)
+
+- **Description:** A UI for vim-dadbod, a database client for Vim and Neovim. It provides a simple interface to interact with databases, run queries, and view results.
+
+---
+
+
+[ibhagwan/fzf-lua](https://github.com/ibhagwan/fzf-lua)
+
+- **Description:** Wrapper around fzf for neovim. Replaces Telescope for searching
+
+---
+
+
+[lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+
+- **Description:** Git signs written in pure lua
+
+---
+
+
+[ray-x/go.nvim](https://github.com/ray-x/go.nvim)
+
+- **Description:** Go development plugin for neovim
+
+---
+
+
+[mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
+
+- **Description:** An asynchronous linter plugin for Neovim (&gt;= 0.9.5) complementary to the built-in Language Server Protocol support.
+
+---
+
+
+[neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+- **Description:** nvim-lspconfig is a &#34;data only&#34; repo, providing basic, default Nvim LSP client configurations for various LSP servers.
+
+---
+
+
+[readmes/mini-icons.md](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-icons.md)
+
+- **Description:** Icon provider for the mini.nvim plugins
+
+---
+
+
+[NeogitOrg/neogit](https://github.com/NeogitOrg/neogit)
+
+- **Description:** Neogit is a magit like git client for neovim
+
+---
+
+
+[EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim)
+
+- **Description:** A highly customizable theme for vim and neovim with support for lsp, treesitter and a variety of plugins.
+
+---
+
+
+[folke/noice.nvim](https://github.com/folke/noice.nvim)
+
+- **Description:** A noice message system for Neovim
+
+---
+
+
+[stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
+
+- **Description:** File explorer like a text buffer
+
+---
+
+
+[MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+
+- **Description:** Plugin to improve viewing Markdown files in Neovim
+
+---
+
+
+[nvzone/showkeys](https://github.com/nvzone/showkeys)
+
+- **Description:** Eye-candy keys screencaster for Neovim
+
+---
+
+
+[michaelrommel/nvim-silicon](https://github.com/michaelrommel/nvim-silicon)
+
+- **Description:** nvim-silicon is a plugin for Neovim that allows you to generate images of your code using silicon.
+
+---
+
+
+[tpope/vim-sleuth](https://github.com/tpope/vim-sleuth)
+
+- **Description:** automatically adjusts &#39;shiftwidth&#39; and &#39;expandtab&#39; heuristically based on the current file.
+
+---
+
+
+[echasnovski/mini.statusline](https://github.com/echasnovski/mini.statusline)
+
+- **Description:** Minimal, fast statusline plugin
+
+---
+
+
+[folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+
+- **Description:** A todo comment plugin for neovim written in lua
+
+---
+
+
+[nvim-treesitter/nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+
+- **Description:** Syntax aware text-objects, select, move, swap, and peek support.
+
+---
+
+
+[nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+
+- **Description:** Treesitter configurations
+
+---
+
+
+[folke/trouble.nvim](https://github.com/folke/trouble.nvim)
+
+- **Description:** A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing..
 
 ---
 
