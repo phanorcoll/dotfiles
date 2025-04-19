@@ -8,7 +8,7 @@ return {
 	},
 	build = "make tiktoken",
 	keys = {
-		{ "<leader>cps", "<cmd>CopilotChat<cr>", desc = "CopilotChat - Open chat" },
+		{ "<leader>cps", "<cmd>CopilotChat<cr>", mode = { "n", "v" }, desc = "CopilotChat - Open chat" },
 		{
 			"<leader>cpq",
 			function()
