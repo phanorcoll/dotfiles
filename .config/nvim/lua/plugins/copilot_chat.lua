@@ -8,9 +8,9 @@ return {
 	},
 	build = "make tiktoken",
 	keys = {
-		{ "<leader>ccs", "<cmd>CopilotChat<cr>", desc = "CopilotChat - Open chat" },
+		{ "<leader>cps", "<cmd>CopilotChat<cr>", desc = "CopilotChat - Open chat" },
 		{
-			"<leader>ccq",
+			"<leader>cpq",
 			function()
 				local input = vim.fn.input("Quick Chat: ")
 				if input ~= "" then
@@ -21,15 +21,15 @@ return {
 			end,
 			desc = "CopilotChat - Quick chat",
 		},
-		{ "<leader>cce", "<cmd>CopilotChatExplain<cr>", mode = "v", desc = "CopilotChat - Explain code" },
-		{ "<leader>ccr", "<cmd>CopilotChatReview<cr>", mode = "v", desc = "CopilotChat - Review code" },
-		{ "<leader>ccf", "<cmd>CopilotChatFix<cr>", mode = "v", desc = "CopilotChat - Fix code issues" },
-		{ "<leader>cco", "<cmd>CopilotChatFix<cr>", mode = "v", desc = "CopilotChat - Optimize code" },
-		{ "<leader>ccd", "<cmd>CopilotChatDocs<cr>", mode = "v", desc = "CopilotChat - Generate docs" },
-		{ "<leader>cct", "<cmd>CopilotChatTests<cr>", mode = "v", desc = "CopilotChat - Generate tests" },
-		{ "<leader>ccc", "<cmd>CopilotChatCommit<cr>", desc = "CopilotChat - Generate commit message" },
+		{ "<leader>cpe", "<cmd>CopilotChatExplain<cr>", mode = "v", desc = "CopilotChat - Explain code" },
+		{ "<leader>cpr", "<cmd>CopilotChatReview<cr>", mode = "v", desc = "CopilotChat - Review code" },
+		{ "<leader>cpf", "<cmd>CopilotChatFix<cr>", mode = "v", desc = "CopilotChat - Fix code issues" },
+		{ "<leader>cpo", "<cmd>CopilotChatFix<cr>", mode = "v", desc = "CopilotChat - Optimize code" },
+		{ "<leader>cpd", "<cmd>CopilotChatDocs<cr>", mode = "v", desc = "CopilotChat - Generate docs" },
+		{ "<leader>cpt", "<cmd>CopilotChatTests<cr>", mode = "v", desc = "CopilotChat - Generate tests" },
+		{ "<leader>cpc", "<cmd>CopilotChatCommit<cr>", desc = "CopilotChat - Generate commit message" },
 		{
-			"<leader>ccc",
+			"<leader>cpc",
 			"<cmd>CopilotChatCommit<cr>",
 			mode = "v",
 			desc = "CopilotChat - Generate commit message for selection",
