@@ -37,14 +37,15 @@ return {
 	},
 	opts = {
 		-- See Configuration section for options
+		use_ui_select = true,
+		highlight_headers = false,
+		question_header = "# 🤔 User Asks: ",
+		answer_header = "# 🤖 Copilot Replies: ",
+		error_header = "# 🚨 oops: ",
+		separator = "..👀",
 	},
-	config = function()
+	config = function(_, opts)
 		require("fzf-lua").register_ui_select()
-		require("CopilotChat").setup({
-			use_ui_select = true,
-			highlight_headers = false,
-			separator = "---",
-			error_header = "> [!ERROR] Error",
-		})
+		require("CopilotChat").setup(opts)
 	end,
 }
