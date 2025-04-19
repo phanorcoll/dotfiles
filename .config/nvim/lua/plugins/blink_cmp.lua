@@ -68,6 +68,7 @@ return {
 			default = { "copilot", "lsp", "path", "snippets", "buffer", "emoji" },
 			per_filetype = {
 				sql = { "snippets", "dadbod", "buffer" },
+				["copilot-chat"] = {}, -- Disable all providers for copilot-chat
 			},
 			providers = {
 				emoji = {
