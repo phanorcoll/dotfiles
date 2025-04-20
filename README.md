@@ -1,4 +1,4 @@
-[gopher time](https://github.com/phanorcoll/dotfiles/assets/195602/22e1be57-7c04-4be2-a710-ad2fc14c7180)
+![gopher time](https://github.com/phanorcoll/dotfiles/assets/195602/22e1be57-7c04-4be2-a710-ad2fc14c7180)
 # Configuration files
 
 
@@ -18,7 +18,7 @@ Set the global Git configuration to use your template file.
 
 `git config --global commit.template ~/.git_commit_template.txt `
 
-## Setup enviroment variables.
+## Setup environment variables.
 create a file called `.zshenv` in `$HOME` to export all variables needed.
 ex:
 ```bash
