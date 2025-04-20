@@ -6,3 +6,4 @@
 .config/nvim/lua/plugins/plugin_dev/
 .config/nvim/lua/plugins/dev.lua
 .config/nvim/lua/plugin_development.lua
+.*-bk
