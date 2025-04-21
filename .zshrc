@@ -3,9 +3,8 @@ if [[ ! -d "$HOME/.local/run" ]]; then
   mkdir -p "$HOME/.local/run"
   chmod 700 "$HOME/.local/run"
 fi
-if [[ -z "$XDG_RUNTIME_DIR" ]]; then
-  export XDG_RUNTIME_DIR="$HOME/.local/run"
-fi
+export XDG_RUNTIME_DIR="$HOME/.local/run"
+
 ##start tmux
 export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
 export ZSH_TMUX_AUTOSTART=true
