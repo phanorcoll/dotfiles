@@ -1,3 +1,14 @@
+# Ensure XDG_RUNTIME_DIR is set and exists
+if [[ ! -d "$HOME/.local/run" ]]; then
+  mkdir -p "$HOME/.local/run"
+  chmod 700 "$HOME/.local/run"
+fi
+if [[ -z "$XDG_RUNTIME_DIR" ]]; then
+  export XDG_RUNTIME_DIR="$HOME/.local/run"
+fi
+##start tmux
+export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
+export ZSH_TMUX_AUTOSTART=true
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="mr-robot"
 plugins=(git asdf colorize colored-man-pages fasd tmux zsh-syntax-highlighting zsh-autosuggestions zsh-autocomplete )
@@ -53,6 +64,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
+
 
 # zsh configuration.
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
