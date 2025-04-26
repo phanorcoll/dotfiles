@@ -146,3 +146,17 @@ _fzf_comprun() {
 }
 
 source ~/.fzf-git.sh/fzf-git.sh
+
+# 1password https://developer.1password.com
+eval $(op signin)
+eval "$(op completion zsh)"; compdef _op op
+# Load secrets from 1Password using op inject
+# Reads the template file, replaces references with secrets, and evaluates the output
+if command -v op &> /dev/null; then
+  op inject --in-file ~/.zshenv | while read -r line; do
+    eval "$line"
+  done
+else
+  echo "1Password CLI not found. Skipping loading secrets from 1Password." >&2
+fi
+
