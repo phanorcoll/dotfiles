@@ -77,7 +77,7 @@ function project_tool_versions() {
     # Check for Go version
     if [ -f "go.mod" ] || [ -d ".go" ]; then
         local go_version=$(go version 2>/dev/null | awk '{print $3}')
-        [ -n "$go_version" ] && tool_info+="  %F{$SECONDARY_COLOR}󰟓 $go_version%f"
+        [ -n "$go_version" ] && tool_info+="  %F{$SECONDARY_COLOR} $go_version%f"
     fi
 
     if [ -n "$tool_info" ]; then
