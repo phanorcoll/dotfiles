@@ -232,6 +232,7 @@ return {
 			ts_ls = {},
 			templ = {},
 			tailwindcss = {},
+			terraformls = {},
 			--
 
 			lua_ls = {
@@ -276,6 +277,7 @@ return {
 			"revive", -- for goland
 			"eslint_d", -- for javascript/typescript
 			"jsonlint", -- for json
+			"tflint", -- for terraform
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
