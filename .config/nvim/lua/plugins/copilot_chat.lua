@@ -28,12 +28,6 @@ return {
 		{ "<leader>cpd", "<cmd>CopilotChatDocs<cr>", mode = "v", desc = "CopilotChat - Generate docs" },
 		{ "<leader>cpt", "<cmd>CopilotChatTests<cr>", mode = "v", desc = "CopilotChat - Generate tests" },
 		{ "<leader>cpc", "<cmd>CopilotChatCommit<cr>", desc = "CopilotChat - Generate commit message" },
-		{
-			"<leader>cpc",
-			"<cmd>CopilotChatCommit<cr>",
-			mode = "v",
-			desc = "CopilotChat - Generate commit message for selection",
-		},
 	},
 	opts = {},
 	config = function(_, opts)
@@ -42,10 +36,20 @@ return {
 			-- See Configuration section for options
 			use_ui_select = true,
 			highlight_headers = false,
-			question_header = "# 🤔 User Asks: ",
+			question_header = "# 🧙 Wizard's Inquiry",
 			answer_header = "# 🤖 Copilot Replies: ",
 			error_header = "# 🚨 oops: ",
-			separator = "..👀",
+			separator = "  ",
+			window = {
+				layout = "float",
+				col = vim.o.columns - 2,
+				relative = "editor",
+				width = math.floor(vim.o.columns * 0.4),
+				height = math.floor(vim.o.lines * 0.8),
+				border = "rounded",
+				title = "💡 Code Whisperer",
+				footer = "📜 Control what you can!!",
+			},
 			providers = {
 				gemini = {
 					prepare_input = require("CopilotChat.config.providers").copilot.prepare_input,
