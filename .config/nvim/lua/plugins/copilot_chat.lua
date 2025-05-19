@@ -50,6 +50,44 @@ return {
 				title = "💡 Code Whisperer",
 				footer = "📜 Control what you can!!",
 			},
+			prompts = {
+				PRMessage = {
+					prompt = [[
+					generate a pull request message adhering to best practices for the title and body:
+
+					**1. PR Title:**
+					   - Be concise and informative (keep it under 50 characters).
+					   - Start with a clear prefix indicating the area or type of change (e.g., `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `build:`, `ci:`, `perf:`, `chore:`).
+					   - Clearly describe the main purpose of the changes.
+					   - Example: `feat: Implement user authentication using JWT`
+
+					**2. PR Body:**
+					   - Provide a high-level summary of what the PR introduces.
+					   - Explain the "why" behind the changes (the problem being solved or the goal being achieved).
+					   - If applicable, include:
+					     - Key changes and their impact.
+					     - How the changes were implemented.
+					     - Any important context or considerations for reviewers.
+					     - Links to relevant issues or documentation.
+					]],
+					system_prompt = "You are an AI assistant specialized in generating well-formatted and informative pull request messages. Format as a gitcommit code block.",
+					description = "Generate a pull request message for the current branch's commits.",
+				},
+				JSDoc = {
+					prompt = [[
+					Generate JSDoc/TSDoc comments for the following JavaScript/TypeScript function, adhering to best practices:
+
+					- Clearly document all parameters, including their type and a concise description.
+					- Document the return value, including its type and a description of what it represents.
+					- If the function can throw errors, document the conditions under which it might do so using the `@throws` tag.
+					- Provide a brief summary of the function's purpose at the beginning.
+
+					```${function_code}```
+					]],
+					system_prompt = "You are an expert JavaScript and TypeScript developer who writes clear, accurate, and comprehensive JSDoc/TSDoc comments following best practices.",
+					description = "Generate JSDoc/TSDoc comments for the currently selected JavaScript or TypeScript function.",
+				},
+			},
 		})
 	end,
 }
