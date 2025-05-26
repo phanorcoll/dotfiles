@@ -45,6 +45,9 @@ alias vim=nvim
 # https://github.com/jesseduffield/lazydocker
 alias ld=lazydocker
 
+# https://cheat.sh/
+alias doc='function _doc() { http https://cheat.sh/"$1" | less; }; _doc'
+
 ###### base exports
 #
 export BAT_THEME="Dracula"
