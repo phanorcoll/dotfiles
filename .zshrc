@@ -34,7 +34,8 @@ alias lg=lazygit
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
 # https://github.com/ajeetdsouza/zoxide
-alias cd=z
+# alias cd=z
+alias cd=zi #use fzf to list the matches
 
 # https://github.com/eza-community/eza
 alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
