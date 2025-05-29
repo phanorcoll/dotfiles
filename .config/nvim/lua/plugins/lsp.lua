@@ -278,6 +278,7 @@ return {
 			"eslint_d", -- for javascript/typescript
 			"jsonlint", -- for json
 			"tflint", -- for terraform
+			"shellcheck", -- for shell scripts
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

@@ -13,6 +13,7 @@ return {
 			typescriptreact = { "eslint_d" },
 			go = { "revive" },
 			terraform = { "tflint" },
+			bash = { "shellcheck" },
 		}
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
