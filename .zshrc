@@ -49,6 +49,9 @@ alias ld=lazydocker
 # https://cheat.sh/
 alias doc='function _doc() { http https://cheat.sh/"$1" | less; }; _doc'
 
+# sysboost
+alias sysboost="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y"
+
 ###### base exports
 #
 export BAT_THEME="Dracula"
