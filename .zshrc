@@ -47,7 +47,10 @@ alias vim=nvim
 alias ld=lazydocker
 
 # https://cheat.sh/
-alias doc='function _doc() { http https://cheat.sh/"$1" | less; }; _doc'
+alias docs='function _doc() { http https://cheat.sh/"$1" | less; }; _doc'
+
+#fzf man pages
+alias sman="man -k . | fzf | col1 | xargs -r man"
 
 # sysboost
 alias sysboost="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y"
