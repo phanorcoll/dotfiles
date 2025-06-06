@@ -39,7 +39,7 @@ alias cd=z
 # alias cd=zi #use fzf to list the matches | glitching
 
 # https://github.com/eza-community/eza
-alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --color=always --git --no-filesize --icons --no-time --no-user --no-permissions"
 
 # vim=nvim
 alias vim=nvim
@@ -81,6 +81,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+export TERM="xterm-256color"
 
 # zsh configuration.
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
@@ -91,6 +92,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ###### end of base exports
+
+# ------ History -------
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt HIST_IGNORE_DUPS # Ignore duplicate commands in history
+setopt HIST_IGNORE_SPACE # Ignore commands with leading/trailing whitespace
+setopt SHARE_HISTORY # Share history between all zsh sessions
 
 # zoxide https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
