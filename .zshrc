@@ -18,6 +18,7 @@ source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
+set -o vi # Enable vi mode
 
 ###### aliases
 
