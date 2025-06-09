@@ -62,6 +62,9 @@ alias searchpkg="apt-cache search"
 #install package
 alias installpkg="sudo apt install"
 
+#get file size
+alias fsize="du -h"
+
 ###### base exports
 #
 export BAT_THEME="Dracula"
