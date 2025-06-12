@@ -201,7 +201,16 @@ return {
 		local servers = {
 			awk_ls = {},
 			bashls = {},
-			cssls = {},
+			cssls = {
+				settings = {
+					css = {
+						validate = true,
+						lint = {
+							unknownAtRules = "ignore",
+						},
+					},
+				},
+			},
 			dockerls = {},
 			docker_compose_language_service = {},
 			-- clangd = {},
