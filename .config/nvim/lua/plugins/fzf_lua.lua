@@ -17,6 +17,10 @@ return {
 				-- previewer = "bat",
 				-- Custom fzf options
 			},
+			grep = {
+				hidden = true, -- search hidden files
+				no_ignore = true, -- search files that are ignored by .gitignore
+			},
 			winopts = {
 				width = 0.80,
 
