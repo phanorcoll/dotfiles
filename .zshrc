@@ -4,7 +4,6 @@ if [[ ! -d "$HOME/.local/run" ]]; then
   chmod 700 "$HOME/.local/run"
 fi
 export XDG_RUNTIME_DIR="$HOME/.local/run"
-
 ##start tmux
 export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
 export ZSH_TMUX_AUTOSTART=true
@@ -176,6 +175,9 @@ _fzf_comprun() {
 }
 
 source ~/.fzf-git.sh/fzf-git.sh
+
+#cargo
+source "$HOME/.cargo/env"
 
 # 1password https://developer.1password.com
 eval $(op signin)
