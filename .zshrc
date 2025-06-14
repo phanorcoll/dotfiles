@@ -50,7 +50,7 @@ alias ld=lazydocker
 alias docs='function _doc() { http https://cheat.sh/"$1" | less; }; _doc'
 
 #fzf man pages
-alias sman="man -k . | fzf | col1 | xargs -r man"
+alias sman="man -k . | fzf | awk '{print $1}' | xargs -r man"
 
 # sysboost
 alias sysboost="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y"
