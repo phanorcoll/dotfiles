@@ -64,6 +64,9 @@ alias installpkg="sudo apt install"
 #get file size
 alias fsize="du -h"
 
+#https://github.com/noahgorstein/jqp
+alias jq=jqp
+
 ###### base exports
 #
 export BAT_THEME="Dracula"
@@ -76,6 +79,9 @@ export PATH=$PATH:$GOPATH:$GOBIN:$GO:$LOCAL_BIN:$NVIM
 
 # set neovim as defualt editor
 export EDITOR="$(which nvim)"
+export VISUAL="$(which nvim)"
+
+export BROWSER="google-chrome" # set default browser to google chrome
 
 # XDG base directories.
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -123,7 +129,11 @@ COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 
 ### Set up fzf key bindings and fuzzy completion
 ## https://github.com/junegunn/fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+else
+  source <(fzf --zsh)
+fi
 # Setting fd as the default source for fzf
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=header,grid --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
