@@ -9,12 +9,12 @@ export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
 export ZSH_TMUX_AUTOSTART=true
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="mr-robot"
-plugins=(git asdf colorize colored-man-pages fasd tmux zsh-syntax-highlighting zsh-autosuggestions zsh-autocomplete )
+plugins=(git asdf colorize colored-man-pages fasd tmux zsh-syntax-highlighting zsh-autosuggestions zsh-autocomplete history-substring-search )
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh_aliases
-source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source ~/.zsh_aliases
+source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 #https://github.com/zsh-users/zsh-autosuggestions
-source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
 set -o vi # Enable vi mode
@@ -174,6 +174,7 @@ _fzf_comprun() {
   esac
 }
 
+# https://github.com/junegunn/fzf-git.sh?tab=readme-ov-file
 source ~/.fzf-git.sh/fzf-git.sh
 
 #cargo
