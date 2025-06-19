@@ -3,7 +3,7 @@ if [[ ! -d "$HOME/.local/run" ]]; then
   mkdir -p "$HOME/.local/run"
   chmod 700 "$HOME/.local/run"
 fi
-export XDG_RUNTIME_DIR="$HOME/.local/run"
+# export XDG_RUNTIME_DIR="$HOME/.local/run"
 ##start tmux
 export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
 export ZSH_TMUX_AUTOSTART=true
@@ -202,4 +202,7 @@ if command -v op &> /dev/null; then
 else
   echo "1Password CLI not found. Skipping loading secrets from 1Password." >&2
 fi
+
+# https://docs.atuin.sh/
+eval "$(atuin init zsh)"
 
