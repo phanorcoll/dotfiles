@@ -190,6 +190,9 @@ source ~/.fzf-git.sh/fzf-git.sh
 #cargo
 source "$HOME/.cargo/env"
 
+# https://docs.atuin.sh/
+eval "$(atuin init zsh)"
+
 # 1password https://developer.1password.com
 eval $(op signin)
 eval "$(op completion zsh)"; compdef _op op
@@ -203,6 +206,4 @@ else
   echo "1Password CLI not found. Skipping loading secrets from 1Password." >&2
 fi
 
-# https://docs.atuin.sh/
-eval "$(atuin init zsh)"
 
