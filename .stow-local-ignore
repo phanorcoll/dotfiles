@@ -3,6 +3,7 @@
 scripts
 .config/nvim/test
 .config/nvim-old-v1
+.config/atuin
 assets
 .*-bk
 README.*
