@@ -86,6 +86,7 @@ function project_tool_versions() {
 }
 
 # Set the prompt
-PROMPT='%F{$PRIMARY_COLOR}󰚩  %n%f%F{$SECONDARY_COLOR} %f '
+PROMPT='%F{$PRIMARY_COLOR}󰚩  %n%f $(git_prompt_status)$(project_tool_versions)
+%F{$SECONDARY_COLOR}%f '
 # Customize the right prompt
-RPROMPT='$(git_prompt_status)$(project_tool_versions)'
+# RPROMPT='$(git_prompt_status)$(project_tool_versions)'
