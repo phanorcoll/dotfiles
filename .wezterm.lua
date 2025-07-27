@@ -11,7 +11,7 @@ config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 15
 config.color_scheme = "Afterglow"
 
-config.enable_tab_bar = false
+config.enable_tab_bar = true
 config.window_decorations = "NONE"
 config.window_background_opacity = 0.96
 
