@@ -78,7 +78,7 @@ export PATH=$PATH:$GOPATH:$GOBIN:$GO:$LOCAL_BIN:$NVIM
 export EDITOR="$(which nvim)"
 export VISUAL="$(which nvim)"
 
-export BROWSER="google-chrome" # set default browser to google chrome
+export BROWSER="none" # set default browser to google chrome
 
 # XDG base directories.
 export XDG_CACHE_HOME="$HOME/.cache"
