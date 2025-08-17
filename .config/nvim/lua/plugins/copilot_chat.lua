@@ -21,6 +21,19 @@ return {
 			end,
 			desc = "CopilotChat - Quick chat",
 		},
+		{
+			"<leader>cpp",
+			function()
+				local input = vim.fn.input("Ask Perplexity: ")
+				if input ~= "" then
+					require("CopilotChat").ask(input, {
+						agent = "perplexityai",
+						selection = false,
+					})
+				end
+			end,
+			desc = "CopilotChat - Ask Perplexity",
+		},
 		{ "<leader>cpe", "<cmd>CopilotChatExplain<cr>", mode = "v", desc = "CopilotChat - Explain code" },
 		{ "<leader>cpr", "<cmd>CopilotChatReview<cr>", mode = "v", desc = "CopilotChat - Review code" },
 		{ "<leader>cpf", "<cmd>CopilotChatFix<cr>", mode = "v", desc = "CopilotChat - Fix code issues" },
@@ -30,26 +43,37 @@ return {
 		{ "<leader>cpc", "<cmd>CopilotChatCommit<cr>", desc = "CopilotChat - Generate commit message" },
 	},
 	opts = {},
-	config = function(_, opts)
+	config = function(_, _)
+		vim.api.nvim_set_hl(0, "CopilotChatHeader", { fg = "#fefefe", bold = true })
+		vim.api.nvim_set_hl(0, "CopilotChatSeparator", { fg = "#374151" })
+		-- Auto-command to customize chat buffer behavior
+		vim.api.nvim_create_autocmd("BufEnter", {
+			pattern = "copilot-*",
+			callback = function()
+				vim.opt_local.relativenumber = false
+				vim.opt_local.number = false
+				vim.opt_local.conceallevel = 0
+			end,
+		})
 		require("fzf-lua").register_ui_select()
 		require("CopilotChat").setup({
 			-- See Configuration section for options
-			use_ui_select = true,
-			highlight_headers = false,
-			question_header = "# 🧙 Wizard's Inquiry",
-			answer_header = "# 🤖 Copilot Replies: ",
-			error_header = "# 🚨 oops: ",
-			separator = "  ",
-			window = {
-				layout = "float",
-				col = vim.o.columns - 2,
-				relative = "editor",
-				width = math.floor(vim.o.columns * 0.4),
-				height = math.floor(vim.o.lines * 0.8),
-				border = "rounded",
-				title = "💡 Code Whisperer",
-				footer = "📜 Control what you can!!",
+			headers = {
+				user = "👤 code wizard ",
+				assistant = "🤖 Copilot: ",
+				tool = "🔧 Tool: ",
 			},
+			highlight_headers = true,
+			error_header = "> [!ERROR] Error",
+			separator = "━━",
+			show_folds = false,
+			model = "gemini-2.5-pro", -- AI model to use
+			temperature = 0.1, -- Lower = focused, higher = creative
+			window = {
+				layout = "vertical", -- 'vertical', 'horizontal', 'float'
+				width = 0.45, -- screen width
+			},
+			auto_insert_mode = false, -- Enter insert mode when opening
 			prompts = {
 				PRMessage = {
 					prompt = [[
