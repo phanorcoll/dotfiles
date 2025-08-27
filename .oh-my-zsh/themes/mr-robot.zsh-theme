@@ -15,6 +15,12 @@ function git_prompt_status() {
     local git_status
     branch_name=$(git symbolic-ref --short HEAD 2>/dev/null)
     if [ -n "$branch_name" ]; then
+        local tag_name=$(git describe --tags --abbrev=0 2>/dev/null)
+        local branch_info="$branch_name"
+        if [ -n "$tag_name" ]; then
+            branch_info+=" %F{$YELLOW_COLOR} $tag_name%f"
+        fi
+
         git_status=$(git status --porcelain 2>/dev/null)
         if [ -n "$git_status" ]; then
             local added=""
@@ -46,9 +52,9 @@ function git_prompt_status() {
                 symbols+=" %F{$INFO_TEXT}$untracked%f "
             fi
 
-            echo "  $symbols %F{$INFO_TEXT} $branch_name%f"
+            echo "  $symbols %F{$INFO_TEXT} $branch_info%f"
         else
-            echo "  %F{$INFO_TEXT} $branch_name%f"
+            echo "  %F{$INFO_TEXT} $branch_info%f"
         fi
     else
         echo " %F{INFO_TEXT}󱂷 %f"
