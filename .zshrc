@@ -72,7 +72,10 @@ export GOBIN=$GOPATH/bin #go modules binaries
 export GO=/usr/local/go/bin #go main executable
 export LOCAL_BIN=$HOME/.local/bin #local bin
 export NVIM=/opt/nvim-linux/bin
-export PATH=$PATH:$GOPATH:$GOBIN:$GO:$LOCAL_BIN:$NVIM
+export GCLOUD_CLI=$HOME/google-cloud-sdk/bin
+export JAVA_HOME=/usr/local/jdk-17.0.12
+export GRADLE_HOME=/opt/gradle/gradle-7.6.6
+export PATH=$PATH:$GOPATH:$GOBIN:$GO:$LOCAL_BIN:$NVIM:$GCLOUD_CLI:$JAVA_HOME/bin:$GRADLE_HOME/bin
 
 # set neovim as defualt editor
 export EDITOR="$(which nvim)"
@@ -202,5 +205,3 @@ if command -v op &> /dev/null; then
 else
   echo "1Password CLI not found. Skipping loading secrets from 1Password." >&2
 fi
-
-
