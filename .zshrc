@@ -99,6 +99,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+alias nvim-dev='NVIM_APPNAME=nvim-0.12-config /home/dupin/nvim-0.12-dev/bin/nvim'
+
 ###### end of base exports
 
 # ------ History -------
