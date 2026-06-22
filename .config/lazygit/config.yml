@@ -58,10 +58,10 @@ gui:
   animateExplosion: true # shows an explosion animation when nuking the working tree
   portraitMode: 'auto' # one of 'auto' | 'never' | 'always'
 git:
-  paging:
-    colorArg: always
-    # pager: diff-so-fancy
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      # pager: diff-so-fancy
+      pager: delta --dark --paging=never
   commit:
     signOff: false
   merging:
@@ -197,7 +197,7 @@ keybinding:
     viewResetOptions: 'D'
     fetch: 'f'
     toggleTreeView: '`'
-    openMergeTool: 'M'
+    openMergeOptions: 'M'
     openStatusFilter: '<c-b>'
   branches:
     createPullRequest: 'o'
@@ -230,7 +230,6 @@ keybinding:
     pasteCommits: 'V'
     tagCommit: 'T'
     checkoutCommit: '<space>'
-    resetCherryPick: '<c-R>'
     openLogMenu: '<c-l>'
     viewBisectOptions: 'b'
   stash:
