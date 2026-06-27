@@ -39,6 +39,7 @@ require("mason-tool-installer").setup({
 		"golines",
 		--debuggers
 		"delve",
+		"js-debug-adapter",
 		--linters
 		"revive", -- <--  for Go
 		"eslint_d", -- <-- for javascript/typescript

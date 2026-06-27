@@ -97,6 +97,10 @@
       "rev": "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6",
       "src": "https://github.com/theHamsta/nvim-dap-virtual-text"
     },
+    "nvim-dap-vscode-js": {
+      "rev": "03bd29672d7fab5e515fc8469b7d07cc5994bbf6",
+      "src": "https://github.com/mxsdev/nvim-dap-vscode-js"
+    },
     "nvim-lint": {
       "rev": "eab58b48eb11d7745c11c505e0f3057165902461",
       "src": "https://github.com/mfussenegger/nvim-lint"
