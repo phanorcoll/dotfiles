@@ -81,6 +81,10 @@
       "rev": "a065833f35a3a7cc3ef137ac88b5381da2ba302e",
       "src": "https://github.com/norcalli/nvim-colorizer.lua"
     },
+    "nvim-dap": {
+      "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
+      "src": "https://github.com/mfussenegger/nvim-dap"
+    },
     "nvim-lint": {
       "rev": "eab58b48eb11d7745c11c505e0f3057165902461",
       "src": "https://github.com/mfussenegger/nvim-lint"
