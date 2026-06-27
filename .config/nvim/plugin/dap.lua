@@ -43,7 +43,7 @@ local function map(lhs, rhs, desc)
 	vim.keymap.set("n", lhs, rhs, { desc = "DAP: " .. desc, silent = true })
 end
 
-map("<leader>dc", dap.continue, "Continue")
+map("<leader>dc", dap.continue, "Start/Continue")
 map("<leader>dt", dap.terminate, "Terminate")
 map("<leader>do", dap.step_over, "Step over")
 map("<leader>di", dap.step_into, "Step into")
