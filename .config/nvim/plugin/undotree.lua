@@ -1,0 +1,2 @@
+-- https://www.reddit.com/r/neovim/comments/1s8y8kn/neovim_012_comes_with_undotree_builtin/
+-- vim.pack.add({ "nvim.undotree" })
