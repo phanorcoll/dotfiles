@@ -1,98 +1,115 @@
+-------------------------------------------------------------------------------
+-- OPTIONS
+-- Documentation: :help options
+-------------------------------------------------------------------------------
 local opt = vim.opt
 
-opt.nu = true -- enable line numbers
-opt.relativenumber = true -- relative line numbers
-opt.clipboard:append 'unnamedplus' --clipboard
-opt.termguicolors = true -- enable true color support
+-- Line Numbers & Appearance
+opt.number = true -- Show absolute line number
+opt.relativenumber = true -- Show relative line number
+opt.cursorline = true -- Highlight the text line of the cursor
+opt.termguicolors = true -- Enable 24-bit RGB colors
+opt.signcolumn = "yes" -- Always show the sign column (gutter)
+opt.colorcolumn = "100" -- Vertical ruler at column 100
+opt.showmatch = true -- Highlight matching brackets
+opt.conceallevel = 0 -- Do not hide markup text
+opt.concealcursor = "" -- Do not hide cursorline in markup
+opt.fillchars = { eob = " " } -- Hide the "~" on empty lines
+opt.cursorcolumn = true -- Highlight the screen column of the cursor
 
-opt.undodir = os.getenv 'HOME' .. '/.vim/undodir' -- set directory where undo files are stored
-opt.undofile = true -- save undo history to a file
+-- Make the cursor column a subtle grey/dark color
+-- Adjust 'bg' to fit your terminal's theme
+vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#cccccc", ctermbg = 235 })
 
-vim.scriptencoding = 'utf-8' -- set the encoding of the current script file to UTF-8
-opt.encoding = 'utf-8' -- set the encoding of the current buffer to UTF-8
-opt.fileencoding = 'utf-8' -- set the encoding of the current file to UTF-8
+-- General Behavior
+opt.mouse = "a" -- Enable mouse support
+opt.clipboard:append("unnamedplus") -- Use system clipboard
+opt.hidden = true -- Allow background buffers without saving
+opt.errorbells = false -- Disable beep/flash on errors
+opt.updatetime = 300 -- Faster completion and diagnostic updates
+opt.timeoutlen = 500 -- Wait time for mapped sequences
+opt.ttimeoutlen = 0 -- Wait time for key codes
+opt.lazyredraw = true -- Do not redraw screen during macros
+opt.encoding = "utf-8" -- Set internal string encoding
+opt.iskeyword:append("-") -- Treat dash-separated words as a single unit
 
--- dont show the mode since its already in the status bar
-opt.showmode = false
+-- Text Formatting & Indentation
+opt.wrap = false -- Disable line wrapping
+opt.tabstop = 2 -- Number of spaces a <Tab> counts for
+opt.shiftwidth = 2 -- Size of an indent
+opt.softtabstop = 2 -- Number of spaces a <Tab> counts for while editing
+opt.expandtab = true -- Use spaces instead of tabs
+opt.smartindent = true -- Insert indents automatically
+opt.autoindent = true -- Copy indent from current line
+opt.backspace = "indent,eol,start" -- Allow backspacing over everything
 
--- tabs & indentation
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.smarttab = true
-opt.smartindent = true
-opt.autoindent = true
-opt.hlsearch = true
-opt.wrap = false
-opt.backspace = { 'indent', 'eol', 'start' }
-opt.modifiable = true
-opt.breakindent = true -- Enable break indent
+-- Search Settings
+-- Documentation: :help pattern-searches
+opt.ignorecase = true -- Case-insensitive search
+opt.smartcase = true -- Case-sensitive if search contains uppercase
+opt.hlsearch = true -- Highlight all matches of previous search
+opt.incsearch = true -- Show search results as you type
 
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-opt.ignorecase = true
-opt.smartcase = true
+-- Scrolling
+opt.scrolloff = 10 -- Lines of context above/below cursor
+opt.sidescrolloff = 10 -- Columns of context to left/right of cursor
 
--- Keep signcolumn on by default
-opt.signcolumn = 'yes'
+-- Windows & Splits
+opt.splitbelow = true -- New horizontal splits go below
+opt.splitright = true -- New vertical splits go right
 
--- Decrease update time
-opt.updatetime = 250
+-- Command Line & UI
+opt.cmdheight = 1 -- Height of the command line
+opt.showmode = false -- Hide mode (e.g., -- INSERT --) as it's in statusline
+opt.pumheight = 10 -- Max items in popup menu
+opt.pumblend = 10 -- Transparency for popup menu
+opt.winblend = 0 -- Transparency for floating windows
+opt.wildmenu = true -- Command-line completion
+opt.wildmode = "longest:full,full" -- Completion mode for wildmenu
 
--- Decrease mapped sequence wait time
-opt.timeoutlen = 300
+-- File & Buffer Handling
+opt.backup = false -- Do not create backup files
+opt.writebackup = false -- Do not write to a backup file
+opt.swapfile = false -- Do not use swap files
+opt.autoread = true -- Reload files changed outside Nvim
+opt.autowrite = false -- Do not auto-save on buffer switches
+opt.path:append("**") -- Search subdirectories recursively
 
--- Configure how new splits should be opened
-opt.splitright = true
-opt.splitbelow = true
+-- Performance & Limits
+opt.synmaxcol = 300 -- Limit syntax highlighting to 300 columns
+opt.redrawtime = 10000 -- Increase redraw tolerance
+opt.maxmempattern = 20000 -- Increase memory for pattern matching
 
--- Sets how neowill display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
-opt.list = true
-opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
--- Preview substitutions live, as you type!
-opt.inccommand = 'split'
+-- Improve diff display
+-- linematch:60 enables an internal heuristic to better align changed lines
+-- especially useful for large chunks of moved/modified code
+opt.diffopt:append("linematch:60")
 
--- Show which line your cursor is on
-opt.cursorline = true
+-- Cursor Styling
+-- opt.guicursor = "n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 
--- Minimal number of screen lines to keep above and below the cursor.
-opt.scrolloff = 10
+-------------------------------------------------------------------------------
+-- UNDO CONFIGURATION
+-- Documentation: :help undo-redo
+-------------------------------------------------------------------------------
+local undodir = vim.fn.expand("~/.vim/undodir")
+if vim.fn.isdirectory(undodir) == 0 then
+	vim.fn.mkdir(undodir, "p")
+end
 
--- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
--- instead raise a dialog asking if you wish to save the current file(s)
--- See `:help 'confirm'`
-opt.confirm = true
+opt.undofile = true -- Enable persistent undo
+opt.undodir = undodir -- Set the directory for undo files
 
---- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
+-------------------------------------------------------------------------------
+-- FOLDING (Treesitter Based)
+-- Documentation: :help treesitter
+-------------------------------------------------------------------------------
+opt.foldmethod = "expr" -- Use expressions for folding
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Use Treesitter for folding
+opt.foldlevel = 99 -- Start with all folds open
 
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
--- remove trailing whitespace from all lines before saving a file)
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  group = CleanOnSave,
-  pattern = '*',
-  command = [[%s/\s\+$//e]],
-})
-
--- vim.diagnostic.config {
---   signs = {
---     text = {
---       [vim.diagnostic.severity.ERROR] = '✘',
---       [vim.diagnostic.severity.WARN] = '▲',
---       [vim.diagnostic.severity.HINT] = '⚑',
---       [vim.diagnostic.severity.INFO] = '»',
---     },
---   },
--- }
+-------------------------------------------------------------------------------
+-- set the default border for all floating windows
+-- Documentation: :help winborder
+-------------------------------------------------------------------------------
+vim.o.winborder = "rounded"
