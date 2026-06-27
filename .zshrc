@@ -35,7 +35,7 @@ alias cd=z
 # alias cd=zi #use fzf to list the matches | glitching
 
 # https://github.com/eza-community/eza
-alias ls="eza --color=always --git --no-filesize --icons --no-time --no-user --no-permissions"
+#alias ls="eza --color=always --git --no-filesize --icons --no-time --no-user --no-permissions"
 
 # vim=nvim
 alias vim=nvim
